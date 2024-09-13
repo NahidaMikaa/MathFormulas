@@ -247,13 +247,21 @@ def final_Secondyear_Thirdsemester_Firstpartial_themeselector():
         time.sleep(5)
         final_Secondyear_Thirdsemester_Firstpartial_themeselector()
     elif secondsemesterFirstPartialTheme == 2:
-        print("Area")
+        mathF.Area()
+        time.sleep(5)
+        final_Secondyear_Thirdsemester_Firstpartial_themeselector()
     elif secondsemesterFirstPartialTheme == 3:
-        print("Ratio of a line segment")
+        mathF.ratio_of_a_line_segment()
+        time.sleep(5)
+        final_Secondyear_Thirdsemester_Firstpartial_themeselector()
     elif secondsemesterFirstPartialTheme == 4:
-        print("Coordinates of ratio in a line segment")
+        mathF.coordinates_of_ratio()
+        time.sleep(5)
+        final_Secondyear_Thirdsemester_Firstpartial_themeselector()
     elif secondsemesterFirstPartialTheme == 5:
-        print("Midpoint of a line segment")
+        mathF.midpoint_of_a_line_segment()
+        time.sleep(5)
+        final_Secondyear_Thirdsemester_Firstpartial_themeselector()
     elif secondsemesterFirstPartialTheme == 0: #Back
         time.sleep(2)
         thirdsemester_partialselector()
