@@ -87,7 +87,7 @@ def firstsemester_partialselector():
     firstsemesterpartials = int(firstsemesterpartials)
 
     if firstsemesterpartials == 1:
-        print("Partial 1")
+        final_Firstyear_Firstsemester_Firstpartial_themeselector()
     elif firstsemesterpartials == 2:
         print("Partial 2")
     elif firstsemesterpartials == 3:
@@ -130,7 +130,7 @@ def thirdsemester_partialselector():
     if thirdsemesterpartials == 1:
         final_Secondyear_Thirdsemester_Firstpartial_themeselector()
     elif thirdsemesterpartials == 2:
-        print("Partial 2")
+        final_Secondyear_Thirdsemester_Secondpartial_themeselector()
     elif thirdsemesterpartials == 3:
         print("Partial 3")
     elif thirdsemesterpartials == 4:
@@ -239,34 +239,89 @@ def Secondyear_Thirdsemester_Firstpartial_themeselector():
 def final_Secondyear_Thirdsemester_Firstpartial_themeselector():
     Secondyear_Thirdsemester_Firstpartial_themeselector()
 
-    secondsemesterFirstPartialTheme = input("\nEnter the theme: ")
-    secondsemesterFirstPartialTheme = int(secondsemesterFirstPartialTheme)
+    thirdsemesterFirstPartialTheme = input("\nEnter the theme: ")
+    thirdsemesterFirstPartialTheme = int(thirdsemesterFirstPartialTheme)
 
-    if secondsemesterFirstPartialTheme == 1:
+    if thirdsemesterFirstPartialTheme == 1:
         mathF.distance_between_two_points()
         time.sleep(5)
         final_Secondyear_Thirdsemester_Firstpartial_themeselector()
-    elif secondsemesterFirstPartialTheme == 2:
+    elif thirdsemesterFirstPartialTheme == 2:
         mathF.Area()
         time.sleep(5)
         final_Secondyear_Thirdsemester_Firstpartial_themeselector()
-    elif secondsemesterFirstPartialTheme == 3:
+    elif thirdsemesterFirstPartialTheme == 3:
         mathF.ratio_of_a_line_segment()
         time.sleep(5)
         final_Secondyear_Thirdsemester_Firstpartial_themeselector()
-    elif secondsemesterFirstPartialTheme == 4:
+    elif thirdsemesterFirstPartialTheme == 4:
         mathF.coordinates_of_ratio()
         time.sleep(5)
         final_Secondyear_Thirdsemester_Firstpartial_themeselector()
-    elif secondsemesterFirstPartialTheme == 5:
+    elif thirdsemesterFirstPartialTheme == 5:
         mathF.midpoint_of_a_line_segment()
         time.sleep(5)
         final_Secondyear_Thirdsemester_Firstpartial_themeselector()
-    elif secondsemesterFirstPartialTheme == 0: #Back
+    elif thirdsemesterFirstPartialTheme == 0: #Back
         time.sleep(2)
         thirdsemester_partialselector()
     else:
         print("Invalid input.")
+
+def Firstyear_Firstsemester_Firstpartial_themeselector():
+    #Sets may be added later
+    print("[","\033[0;31;40m0","\033[0;37;40m] Back\n")
+
+def final_Firstyear_Firstsemester_Firstpartial_themeselector():
+    Firstyear_Firstsemester_Firstpartial_themeselector()
+
+    firstsemesterFirstPartialTheme = input("\nEnter the theme: ")
+    firstsemesterFirstPartialTheme = int(firstsemesterFirstPartialTheme)
+
+    if firstsemesterFirstPartialTheme == 0: #Back
+        time.sleep(2)
+        firstsemester_partialselector()
+    else:
+        print("Invalid input.")
+
+def Secondyear_Thirdsemester_Secondpartial_themeselector():
+    print("\n[","\033[0;35;40m1","\033[0;37;40m] Slope")
+    print("[","\033[0;36;40m2","\033[0;37;40m] Get Slope from an Angle")
+    print("[","\033[0;33;40m3","\033[0;37;40m] Angle between lines")
+    print("[","\033[0;34;40m4","\033[0;37;40m] xx")
+    print("[","\033[0;32;40m5","\033[0;37;40m] xx")
+    print("[","\033[0;31;40m0","\033[0;37;40m] Back\n")
+
+def final_Secondyear_Thirdsemester_Secondpartial_themeselector():
+    Secondyear_Thirdsemester_Secondpartial_themeselector()
+
+    thirdsemesterFirstPartialTheme = input("\nEnter the theme: ")
+    thirdsemesterFirstPartialTheme = int(thirdsemesterFirstPartialTheme)
+
+    if thirdsemesterFirstPartialTheme == 1:
+        mathF.slope()
+        time.sleep(5)
+        final_Secondyear_Thirdsemester_Secondpartial_themeselector()
+    elif thirdsemesterFirstPartialTheme == 2:
+        mathF.slope_from_angle()
+        time.sleep(5)
+        final_Secondyear_Thirdsemester_Secondpartial_themeselector()
+    elif thirdsemesterFirstPartialTheme == 3:
+        mathF.angle_between_lines()
+        time.sleep(5)
+        final_Secondyear_Thirdsemester_Secondpartial_themeselector()
+    elif thirdsemesterFirstPartialTheme == 4:
+        time.sleep(5)
+        final_Secondyear_Thirdsemester_Secondpartial_themeselector()
+    elif thirdsemesterFirstPartialTheme == 5:
+        time.sleep(5)
+        final_Secondyear_Thirdsemester_Secondpartial_themeselector()
+    elif thirdsemesterFirstPartialTheme == 0: #Back
+        time.sleep(2)
+        thirdsemester_partialselector()
+    else:
+        print("Invalid input.")
+
 
 print(r'''
  __  __       _   _       _____                          _

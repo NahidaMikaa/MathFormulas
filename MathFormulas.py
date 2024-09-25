@@ -1,4 +1,5 @@
 import math
+import numpy as np
 
 def distance_between_two_points():
     x1, y1 = input("\nEnter the first coordinate \033[0;35;40m(x, y)\033[0;37;40m: ").split()
@@ -85,3 +86,66 @@ def midpoint_of_a_line_segment():
     Ym = (y1 + y2) / 2
 
     print(f"\nThe coordinates of the midpoint is (\033[0;35;40m{Xm}\033[0;37;40m, \033[0;31;40m{Ym}\033[0;37;40m)\033[0;37;40m.")
+
+
+def slope():
+    x1, y1 = input("\nEnter the first coordinate \033[0;35;40m(x, y)\033[0;37;40m: ").split()
+    x1, y1 = int(x1), int(y1)
+
+    x2, y2 = input("\nEnter the second coordinate \033[0;34;40m(x, y)\033[0;37;40m: ").split()
+    x2, y2 = int(x2), int(y2)
+    
+    if y1 == y2:
+        print("\nThe slope is \033[0;32;40mzero\033[0;37;40m.") #both Y value are at the same position
+    elif x1 == x2:
+        print("\nThe slope is \033[0;31;40mundefinite\033[0;37;40m.") #both X value are at the same position
+    else:
+        m = ((y2-y1)/(x2-x1))
+    
+        #print(f"\nThe slope of this line is: \033[0;32;40m{m} \033[0;37;40m")
+
+    
+        if m > 0:
+            print("\nThe slope is positive")
+            
+            m = ((y2-y1)/(x2-x1))
+    
+            print(f"\nThe slope of this line is: \033[0;32;40m{m} \033[0;37;40m")
+            angle = math.atan(m)
+            angle2 = math.degrees(angle)
+            print(f"\nThe slope of this line is: \033[0;36;40m{angle2} \033[0;37;40m")
+
+        elif m < 0:
+            print("\nThe slope is negative")
+
+            m = ((y2-y1)/(x2-x1))
+    
+            print(f"\nThe slope of this line is: \033[0;32;40m{m} \033[0;37;40m")
+
+            angle = math.atan(m)
+            angle2 = math.degrees(angle)
+            print(f"\nThe slope of this line is: \033[0;36;40m{angle2} \033[0;37;40m")
+
+def slope_from_angle():
+    θ = input("\nEnter the angle of the slope \033[0;35;40m θ \033[0;37;40m: ")
+    θ = float(θ)
+    
+    m = math.tan(math.radians(θ))
+
+    print(f"\nThe slope of this line is: \033[0;32;40m{m} \033[0;37;40m")
+
+def angle_between_lines():
+    m1, m2 = input("\nEnter the value of the slope of both lines \033[0;35;40m(m₁, m₂)\033[0;37;40m: ").split()
+    m1, m2 = float(m1), float(m2)
+
+    α = math.degrees(math.atan(abs((m2-m1)/(1+(m1*m2)))))
+
+    print(f"\nThe angle between the two lines is: \033[0;36;40m{α} \033[0;37;40m degrees")
+
+def sets():
+    #https://www.programiz.com/python-programming/methods/set/union
+    
+    A = {"apple", "grape", "pear"}
+    B = {"apple"}
+
+    print(f"A = B: {B.issubset(A)}") 
