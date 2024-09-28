@@ -90,10 +90,10 @@ def midpoint_of_a_line_segment():
 
 def slope():
     x1, y1 = input("\nEnter the first coordinate \033[0;35;40m(x, y)\033[0;37;40m: ").split()
-    x1, y1 = int(x1), int(y1)
+    x1, y1 = float(x1), float(y1)
 
     x2, y2 = input("\nEnter the second coordinate \033[0;34;40m(x, y)\033[0;37;40m: ").split()
-    x2, y2 = int(x2), int(y2)
+    x2, y2 = float(x2), float(y2)
     
     if y1 == y2:
         print("\nThe slope is \033[0;32;40mzero\033[0;37;40m.") #both Y value are at the same position
@@ -124,7 +124,7 @@ def slope():
 
             angle = math.atan(m)
             angle2 = math.degrees(angle)
-            print(f"\nThe slope of this line is: \033[0;36;40m{angle2} \033[0;37;40m")
+            print(f"\nThe angle of this line is: \033[0;36;40m{angle2} \033[0;37;40m")
 
 def slope_from_angle():
     θ = input("\nEnter the angle of the slope \033[0;35;40m θ \033[0;37;40m: ")
@@ -135,12 +135,34 @@ def slope_from_angle():
     print(f"\nThe slope of this line is: \033[0;32;40m{m} \033[0;37;40m")
 
 def angle_between_lines():
-    m1, m2 = input("\nEnter the value of the slope of both lines \033[0;35;40m(m₁, m₂)\033[0;37;40m: ").split()
+    m1, m2= input("\nEnter the value of the slope in fraction \033[0;35;40m\033[0;37;40m: ").split("/")
     m1, m2 = float(m1), float(m2)
+    
+    mA = (m1/m2)
+    #print(mA)
+    
+    m3, m4 = input("\nEnter the value of the slope in fraction \033[0;35;40m\033[0;37;40m: ").split("/")
+    m3, m4 = float(m3), float(m4)
+    
+    mB = (m3/m4)
+    #print(mB)
 
-    α = math.degrees(math.atan(abs((m2-m1)/(1+(m1*m2)))))
-
-    print(f"\nThe angle between the two lines is: \033[0;36;40m{α} \033[0;37;40m degrees")
+    μ = (1+(mA*mB))
+    print(f"\n{μ}")
+    if μ == 0:
+        print(f"\nThe angle between the two lines is: \033[0;36;40m90° \033[0;37;40m degrees")
+    else:
+        alpha = math.atan((mB-mA)/μ)
+        alpha2 = math.degrees(alpha)
+    
+        if mA == mB:
+            print("\nThis lines are parralel")
+        elif (mA*mB) == -1:
+            print("\nThis lines are perpendicular")
+        elif (mA*mB) != -1 and mA != mB:
+            print("\nThis lines are oblique")
+    
+        print(f"\nThe angle between the two lines is: \033[0;36;40m{alpha2} \033[0;37;40m degrees")
 
 def sets():
     #https://www.programiz.com/python-programming/methods/set/union
