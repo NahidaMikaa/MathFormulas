@@ -288,8 +288,6 @@ def Secondyear_Thirdsemester_Secondpartial_themeselector():
     print("\n[","\033[0;35;40m1","\033[0;37;40m] Slope")
     print("[","\033[0;36;40m2","\033[0;37;40m] Get Slope from an Angle")
     print("[","\033[0;33;40m3","\033[0;37;40m] Angle between lines")
-    print("[","\033[0;34;40m4","\033[0;37;40m] xx")
-    print("[","\033[0;32;40m5","\033[0;37;40m] xx")
     print("[","\033[0;31;40m0","\033[0;37;40m] Back\n")
 
 def final_Secondyear_Thirdsemester_Secondpartial_themeselector():
