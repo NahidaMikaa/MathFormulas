@@ -132,7 +132,7 @@ def thirdsemester_partialselector():
     elif thirdsemesterpartials == 2:
         final_Secondyear_Thirdsemester_Secondpartial_themeselector()
     elif thirdsemesterpartials == 3:
-        final_Secondyear_Thirdsemester_Thirdpartial_themeselector
+        final_Secondyear_Thirdsemester_Thirdpartial_themeselector()
     elif thirdsemesterpartials == 4:
         print("Partial 4")
     elif thirdsemesterpartials == 5:

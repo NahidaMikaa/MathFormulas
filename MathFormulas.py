@@ -292,7 +292,7 @@ def Equation_of_a_line_that_passes_through_2_points():
     print(fifth_in_fraction)
 
     ordinary = (f"y = {m_in_fraction}x {fifth_in_fraction}")
-    print(ordinary)
+    print(f"The ordinary equation is: {ordinary}")
 
     d1, d2 = string_m_in_fraction.split("/")
     d1, d2 = int(d1), int(d2)
@@ -318,6 +318,5 @@ def Equation_of_a_line_that_passes_through_2_points():
         C = d3
 
     General = (f"{A}x {B_alpha}y {C} = 0")
-    print(General)
+    print(f"The general equation is: {General}")
 
-Equation_of_a_line_that_passes_through_2_points()
