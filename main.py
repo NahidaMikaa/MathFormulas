@@ -288,39 +288,75 @@ def Secondyear_Thirdsemester_Secondpartial_themeselector():
     print("\n[","\033[0;35;40m1","\033[0;37;40m] Slope")
     print("[","\033[0;36;40m2","\033[0;37;40m] Get Slope from an Angle")
     print("[","\033[0;33;40m3","\033[0;37;40m] Angle between lines")
-    print("[","\033[0;34;40m4","\033[0;37;40m] xx")
-    print("[","\033[0;32;40m5","\033[0;37;40m] xx")
     print("[","\033[0;31;40m0","\033[0;37;40m] Back\n")
 
 def final_Secondyear_Thirdsemester_Secondpartial_themeselector():
     Secondyear_Thirdsemester_Secondpartial_themeselector()
 
-    thirdsemesterFirstPartialTheme = input("\nEnter the theme: ")
-    thirdsemesterFirstPartialTheme = int(thirdsemesterFirstPartialTheme)
+    thirdsemesterSecondPartialTheme = input("\nEnter the theme: ")
+    thirdsemesterSecondPartialTheme = int(thirdsemesterSecondPartialTheme)
 
-    if thirdsemesterFirstPartialTheme == 1:
+    if thirdsemesterSecondPartialTheme == 1:
         mathF.slope()
         time.sleep(5)
         final_Secondyear_Thirdsemester_Secondpartial_themeselector()
-    elif thirdsemesterFirstPartialTheme == 2:
+    elif thirdsemesterSecondPartialTheme == 2:
         mathF.slope_from_angle()
         time.sleep(5)
         final_Secondyear_Thirdsemester_Secondpartial_themeselector()
-    elif thirdsemesterFirstPartialTheme == 3:
+    elif thirdsemesterSecondPartialTheme == 3:
         mathF.angle_between_lines()
         time.sleep(5)
         final_Secondyear_Thirdsemester_Secondpartial_themeselector()
-    elif thirdsemesterFirstPartialTheme == 4:
+    elif thirdsemesterSecondPartialTheme == 4:
         time.sleep(5)
         final_Secondyear_Thirdsemester_Secondpartial_themeselector()
-    elif thirdsemesterFirstPartialTheme == 5:
+    elif thirdsemesterSecondPartialTheme == 5:
         time.sleep(5)
         final_Secondyear_Thirdsemester_Secondpartial_themeselector()
-    elif thirdsemesterFirstPartialTheme == 0: #Back
+    elif thirdsemesterSecondPartialTheme == 0: #Back
         time.sleep(2)
         thirdsemester_partialselector()
     else:
         print("Invalid input.")
+
+def Secondyear_Thirdsemester_Thirdpartial_themeselector():
+    print("\n[","\033[0;35;40m1","\033[0;37;40m] Point-Slope equation of a line")
+    print("[","\033[0;36;40m2","\033[0;37;40m] Equation of a line that passes through 2 points")
+    print("[","\033[0;33;40m3","\033[0;37;40m] xx")
+    print("[","\033[0;34;40m4","\033[0;37;40m] xx")
+    print("[","\033[0;32;40m5","\033[0;37;40m] xx")
+    print("[","\033[0;31;40m0","\033[0;37;40m] Back\n")
+
+def final_Secondyear_Thirdsemester_Thirdpartial_themeselector():
+    Secondyear_Thirdsemester_Thirdpartial_themeselector()
+
+    thirdsemesterThirdPartialTheme = input("\nEnter the theme: ")
+    thirdsemesterThirdPartialTheme = int(thirdsemesterThirdPartialTheme)
+
+    if thirdsemesterThirdPartialTheme == 1:
+        mathF.point_slope_equaton_of_a_line()
+        time.sleep(5)
+        final_Secondyear_Thirdsemester_Thirdpartial_themeselector()
+    elif thirdsemesterThirdPartialTheme == 2:
+        mathF.Equation_of_a_line_that_passes_through_2_points()
+        time.sleep(5)
+        final_Secondyear_Thirdsemester_Thirdpartial_themeselector()
+    elif thirdsemesterThirdPartialTheme == 3:
+        time.sleep(5)
+        final_Secondyear_Thirdsemester_Thirdpartial_themeselector()
+    elif thirdsemesterThirdPartialTheme == 4:
+        time.sleep(5)
+        final_Secondyear_Thirdsemester_Thirdpartial_themeselector()
+    elif thirdsemesterThirdPartialTheme == 5:
+        time.sleep(5)
+        final_Secondyear_Thirdsemester_Thirdpartial_themeselector()
+    elif thirdsemesterThirdPartialTheme == 0: #Back
+        time.sleep(2)
+        thirdsemester_partialselector()
+    else:
+        print("Invalid input.")
+
 
 
 print(r'''

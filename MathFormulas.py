@@ -1,5 +1,7 @@
 import math
 import numpy as np
+import decimal
+from fractions import Fraction
 
 def distance_between_two_points():
     x1, y1 = input("\nEnter the first coordinate \033[0;35;40m(x, y)\033[0;37;40m: ").split()
@@ -136,13 +138,13 @@ def slope_from_angle():
 
 def angle_between_lines():
     m1, m2= input("\nEnter the value of the slope in fraction \033[0;35;40m\033[0;37;40m: ").split("/")
-    m1, m2 = float(m1), float(m2)
+    m1, m2 = int(m1), int(m2)
     
     mA = (m1/m2)
     #print(mA)
     
     m3, m4 = input("\nEnter the value of the slope in fraction \033[0;35;40m\033[0;37;40m: ").split("/")
-    m3, m4 = float(m3), float(m4)
+    m3, m4 = int(m3), int(m4)
     
     mB = (m3/m4)
     #print(mB)
@@ -171,3 +173,151 @@ def sets():
     B = {"apple"}
 
     print(f"A = B: {B.issubset(A)}") 
+
+def point_slope_equaton_of_a_line():
+    x1, y1 = input("\nEnter the first coordinate \033[0;35;40m(x, y)\033[0;37;40m: ").split()
+    x1, y1 = int(x1), int(y1)
+
+    m1, m2= input("\nEnter the value of the slope in fraction \033[0;35;40m\033[0;37;40m: ").split("/")
+    m1, m2 = int(m1), int(m2)
+
+    m = (m1/m2)
+
+    first = (-(y1))
+    if first <= -1:
+        print(f"y {first}")
+    elif first >= 1:
+        print(f"y + {first}")
+    
+    second = (-(x1))
+    if second <= -1:
+        xd =(f"x {second}")
+        print(xd)
+    elif second >= 1:
+        xd = (f"x + {second}")
+        print(xd)
+
+    third = (m*second)
+    print(third)
+    fourth = (f"{m}x")
+    print(fourth)
+
+    if first <= -1:
+        fifth = (third + (first*-1))
+        print(fifth)
+    if first >= 1:
+        fifth = (third - first)
+        print(fifth)
+    
+    m_in_fraction = Fraction(m).limit_denominator()
+    string_m_in_fraction = str(Fraction(m).limit_denominator())
+    print(m_in_fraction)
+    
+    
+    fifth_in_fraction = Fraction(fifth).limit_denominator()
+    string_fifth_in_fraction = str(Fraction(fifth).limit_denominator())
+    print(fifth_in_fraction)
+
+    ordinary = (f"y = {m_in_fraction}x {fifth_in_fraction}")
+    print(ordinary)
+
+    d1, d2 = string_m_in_fraction.split("/")
+    d1, d2 = int(d1), int(d2)
+
+    d3, d4 = string_fifth_in_fraction.split("/")
+    d3, d4 = int(d3), int(d4)
+    
+    if d2 == d4:
+        B = d2
+    if d2 != d4:
+        B = (d2*d4)
+
+    A = d1 
+    C = d3
+
+    if A <= -1:
+        A = (d1*-1)
+        B_alpha = B
+        C = (d3*-1)
+    elif A >= 1:
+        A = d1
+        B_alpha = (B*-1)
+        C = d3
+
+    General = (f"{A}x {B_alpha}y {C} = 0")
+    print(General)
+
+def Equation_of_a_line_that_passes_through_2_points():
+    x1, y1 = input("\nEnter the first coordinate \033[0;35;40m(x, y)\033[0;37;40m: ").split()
+    x1, y1 = float(x1), float(y1)
+
+    x2, y2 = input("\nEnter the second coordinate \033[0;34;40m(x, y)\033[0;37;40m: ").split()
+    x2, y2 = float(x2), float(y2)
+
+    m = ((y2-y1)/(x2-x1))
+
+    first = (-(y1))
+    if first <= -1:
+        print(f"y {first}")
+    elif first >= 1:
+        print(f"y + {first}")
+    
+    second = (-(x1))
+    if second <= -1:
+        xd =(f"x {second}")
+        print(xd)
+    elif second >= 1:
+        xd = (f"x + {second}")
+        print(xd)
+
+    third = (m*second)
+    print(third)
+    fourth = (f"{m}x")
+    print(fourth)
+
+    if first <= -1:
+        fifth = (third + (first*-1))
+        print(fifth)
+    if first >= 1:
+        fifth = (third - first)
+        print(fifth)
+    
+    m_in_fraction = Fraction(m).limit_denominator()
+    string_m_in_fraction = str(Fraction(m).limit_denominator())
+    print(m_in_fraction)
+    
+    
+    fifth_in_fraction = Fraction(fifth).limit_denominator()
+    string_fifth_in_fraction = str(Fraction(fifth).limit_denominator())
+    print(fifth_in_fraction)
+
+    ordinary = (f"y = {m_in_fraction}x {fifth_in_fraction}")
+    print(ordinary)
+
+    d1, d2 = string_m_in_fraction.split("/")
+    d1, d2 = int(d1), int(d2)
+
+    d3, d4 = string_fifth_in_fraction.split("/")
+    d3, d4 = int(d3), int(d4)
+    
+    if d2 == d4:
+        B = d2
+    if d2 != d4:
+        B = (d2*d4)
+
+    A = d1 
+    C = d3
+
+    if A <= -1:
+        A = (d1*-1)
+        B_alpha = B
+        C = (d3*-1)
+    elif A >= 1:
+        A = d1
+        B_alpha = (B*-1)
+        C = d3
+
+    General = (f"{A}x {B_alpha}y {C} = 0")
+    print(General)
+
+Equation_of_a_line_that_passes_through_2_points()
