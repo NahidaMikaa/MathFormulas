@@ -323,9 +323,10 @@ def final_Secondyear_Thirdsemester_Secondpartial_themeselector():
 def Secondyear_Thirdsemester_Thirdpartial_themeselector():
     print("\n[","\033[0;35;40m1","\033[0;37;40m] Point-Slope equation of a line")
     print("[","\033[0;36;40m2","\033[0;37;40m] Equation of a line that passes through 2 points")
-    print("[","\033[0;33;40m3","\033[0;37;40m] xx")
-    print("[","\033[0;34;40m4","\033[0;37;40m] xx")
-    print("[","\033[0;32;40m5","\033[0;37;40m] xx")
+    print("[","\033[0;33;40m3","\033[0;37;40m] Symmetric equation to ordinary")
+    print("[","\033[0;34;40m4","\033[0;37;40m] General to Symmetric equation")
+    print("[","\033[0;32;40m5","\033[0;37;40m] Points to General circumference equation")
+    print("[","\033[0;35;40m6","\033[0;37;40m] Points to General circumference equation")
     print("[","\033[0;31;40m0","\033[0;37;40m] Back\n")
 
 def final_Secondyear_Thirdsemester_Thirdpartial_themeselector():
@@ -343,12 +344,19 @@ def final_Secondyear_Thirdsemester_Thirdpartial_themeselector():
         time.sleep(5)
         final_Secondyear_Thirdsemester_Thirdpartial_themeselector()
     elif thirdsemesterThirdPartialTheme == 3:
+        mathF.Symmetric_equation_to_ordinary()
         time.sleep(5)
         final_Secondyear_Thirdsemester_Thirdpartial_themeselector()
     elif thirdsemesterThirdPartialTheme == 4:
+        mathF.general_to_symmetric_equations()
         time.sleep(5)
         final_Secondyear_Thirdsemester_Thirdpartial_themeselector()
     elif thirdsemesterThirdPartialTheme == 5:
+        mathF.points_to_general_circumference_equation()
+        time.sleep(5)
+        final_Secondyear_Thirdsemester_Thirdpartial_themeselector()
+    elif thirdsemesterThirdPartialTheme == 6:
+        mathF.from_general_to_points()
         time.sleep(5)
         final_Secondyear_Thirdsemester_Thirdpartial_themeselector()
     elif thirdsemesterThirdPartialTheme == 0: #Back

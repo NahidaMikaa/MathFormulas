@@ -143,7 +143,7 @@ def angle_between_lines():
     mA = (m1/m2)
     #print(mA)
     
-    m3, m4 = input("\nEnter the value of the slope in fraction \033[0;35;40m\033[0;37;40m: ").split("/")
+    m3, m4 = input("\nEnter the value of the slope in fraction \033[0;34;40m\033[0;37;40m: ").split("/")
     m3, m4 = int(m3), int(m4)
     
     mB = (m3/m4)
@@ -176,10 +176,10 @@ def sets():
 
 def point_slope_equaton_of_a_line():
     x1, y1 = input("\nEnter the first coordinate \033[0;35;40m(x, y)\033[0;37;40m: ").split()
-    x1, y1 = int(x1), int(y1)
+    x1, y1 = float(x1), float(y1)
 
-    m1, m2= input("\nEnter the value of the slope in fraction \033[0;35;40m\033[0;37;40m: ").split("/")
-    m1, m2 = int(m1), int(m2)
+    m1, m2= input("\nEnter the value of the slope in fraction \033[0;34;40m\033[0;37;40m: ").split("/")
+    m1, m2 = float(m1), float(m2)
 
     m = (m1/m2)
 
@@ -209,43 +209,137 @@ def point_slope_equaton_of_a_line():
         fifth = (third - first)
         print(fifth)
     
-    m_in_fraction = Fraction(m).limit_denominator()
-    string_m_in_fraction = str(Fraction(m).limit_denominator())
-    print(m_in_fraction)
+    if m.is_integer() == False and fifth.is_integer() == False:
+        m_in_fraction = Fraction(m).limit_denominator()
+        string_m_in_fraction = str(Fraction(m).limit_denominator())
+        print(m_in_fraction)
     
     
-    fifth_in_fraction = Fraction(fifth).limit_denominator()
-    string_fifth_in_fraction = str(Fraction(fifth).limit_denominator())
-    print(fifth_in_fraction)
-
-    ordinary = (f"y = {m_in_fraction}x {fifth_in_fraction}")
-    print(ordinary)
-
-    d1, d2 = string_m_in_fraction.split("/")
-    d1, d2 = int(d1), int(d2)
-
-    d3, d4 = string_fifth_in_fraction.split("/")
-    d3, d4 = int(d3), int(d4)
+        fifth_in_fraction = Fraction(fifth).limit_denominator()
+        string_fifth_in_fraction = str(Fraction(fifth).limit_denominator())
+        print(fifth_in_fraction)
     
-    if d2 == d4:
-        B = d2
-    if d2 != d4:
-        B = (d2*d4)
+        ordinary = (f"y = {m_in_fraction}x {fifth_in_fraction}")
+        print(ordinary)
 
-    A = d1 
-    C = d3
+        d1, d2 = string_m_in_fraction.split("/")
+        d1, d2 = int(d1), int(d2)
+        print(d1)
+        print(d2)
+    
+        d3, d4 = string_fifth_in_fraction.split("/")
+        d3, d4 = int(d3), int(d4)
+        print(d3)
+        print(d4)
+    
+        if d2 == d4:
+            B = d2
+        if d2 != d4:
+            B = (d2*d4)
 
-    if A <= -1:
-        A = (d1*-1)
-        B_alpha = B
-        C = (d3*-1)
-    elif A >= 1:
-        A = d1
-        B_alpha = (B*-1)
+            A = d1 
+            C = d3
+
+        if A <= -1:
+            A = (d1*-1)
+            B_alpha = B
+            C = (d3*-1)
+        elif A >= 1:
+            A = d1
+            B_alpha = (B*-1)
+            C = d3
+
+        General = (f"{A}x {B_alpha}y {C} = 0")
+        print(General)
+        
+    elif m.is_integer() == True and fifth.is_integer() == False:
+    
+        fifth_in_fraction = Fraction(fifth).limit_denominator()
+        string_fifth_in_fraction = str(Fraction(fifth).limit_denominator())
+        print(fifth_in_fraction)
+    
+        ordinary = (f"y = {m}x {fifth_in_fraction}")
+        print(ordinary)
+
+    
+        d3, d4 = string_fifth_in_fraction.split("/")
+        d3, d4 = int(d3), int(d4)
+        print(d3)
+        print(d4)
+    
+        B =d4 #y value
+
+        A = m*d4 
         C = d3
 
-    General = (f"{A}x {B_alpha}y {C} = 0")
-    print(General)
+        if A <= -1:
+            A = ((m*d4)*-1)
+            B_alpha = B
+            C = (d3*-1)
+        elif A >= 1:
+            A = d1
+            B_alpha = (B*-1)
+            C = m*d4
+
+        General = (f"{A}x {B_alpha}y {C} = 0")
+        print(General)
+    
+    elif m.is_integer() == False and fifth.is_integer() == True:
+        m_in_fraction = Fraction(m).limit_denominator()
+        string_m_in_fraction = str(Fraction(m).limit_denominator())
+        print(m_in_fraction)
+    
+    
+    
+        ordinary = (f"y = {m_in_fraction}x {fifth}")
+        print(ordinary)
+
+        d1, d2 = string_m_in_fraction.split("/")
+        d1, d2 = int(d1), int(d2)
+        print(d1)
+        print(d2)
+        
+        B = d2
+        
+
+        A = d1 
+        C = fifth*d2
+
+        if A <= -1:
+            A = ((fifth*d2)*-1)
+            B_alpha = B
+            C = (d3*-1)
+        elif A >= 1:
+            A = d1
+            B_alpha = (B*-1)
+            C = fifth*d2
+
+        General = (f"{A}x {B_alpha}y {C} = 0")
+        print(General)
+    
+    if m.is_integer() == True and fifth.is_integer() == True:
+        
+        ordinary = (f"y = {m}x {fifth}")
+        print(ordinary)
+    
+        
+        B = 1
+        
+
+        A = m
+        C = fifth
+
+        if A <= -1:
+            A = (m*-1)
+            B_alpha = B
+            C = (fifth*-1)
+        elif A >= 1:
+            A = m
+            B_alpha = (B*-1)
+            C = fifth
+
+        General = (f"{A}x {B_alpha}y {C} = 0")
+        print(General)
 
 def Equation_of_a_line_that_passes_through_2_points():
     x1, y1 = input("\nEnter the first coordinate \033[0;35;40m(x, y)\033[0;37;40m: ").split()
@@ -282,41 +376,529 @@ def Equation_of_a_line_that_passes_through_2_points():
         fifth = (third - first)
         print(fifth)
     
-    m_in_fraction = Fraction(m).limit_denominator()
-    string_m_in_fraction = str(Fraction(m).limit_denominator())
-    print(m_in_fraction)
+    if m.is_integer() == False and fifth.is_integer() == False:
+        m_in_fraction = Fraction(m).limit_denominator()
+        string_m_in_fraction = str(Fraction(m).limit_denominator())
+        print(m_in_fraction)
     
     
-    fifth_in_fraction = Fraction(fifth).limit_denominator()
-    string_fifth_in_fraction = str(Fraction(fifth).limit_denominator())
-    print(fifth_in_fraction)
-
-    ordinary = (f"y = {m_in_fraction}x {fifth_in_fraction}")
-    print(f"The ordinary equation is: {ordinary}")
-
-    d1, d2 = string_m_in_fraction.split("/")
-    d1, d2 = int(d1), int(d2)
-
-    d3, d4 = string_fifth_in_fraction.split("/")
-    d3, d4 = int(d3), int(d4)
+        fifth_in_fraction = Fraction(fifth).limit_denominator()
+        string_fifth_in_fraction = str(Fraction(fifth).limit_denominator())
+        print(fifth_in_fraction)
     
-    if d2 == d4:
-        B = d2
-    if d2 != d4:
-        B = (d2*d4)
+        ordinary = (f"y = {m_in_fraction}x {fifth_in_fraction}")
+        print(ordinary)
 
-    A = d1 
-    C = d3
+        d1, d2 = string_m_in_fraction.split("/")
+        d1, d2 = int(d1), int(d2)
+        print(d1)
+        print(d2)
+    
+        d3, d4 = string_fifth_in_fraction.split("/")
+        d3, d4 = int(d3), int(d4)
+        print(d3)
+        print(d4)
+    
+        if d2 == d4:
+            B = d2
+        if d2 != d4:
+            B = (d2*d4)
 
-    if A <= -1:
-        A = (d1*-1)
-        B_alpha = B
-        C = (d3*-1)
-    elif A >= 1:
-        A = d1
-        B_alpha = (B*-1)
+            A = d1 
+            C = d3
+
+        if A <= -1:
+            A = (d1*-1)
+            B_alpha = B
+            C = (d3*-1)
+        elif A >= 1:
+            A = d1
+            B_alpha = (B*-1)
+            C = d3
+
+        General = (f"{A}x {B_alpha}y {C} = 0")
+        print(General)
+        
+    elif m.is_integer() == True and fifth.is_integer() == False:
+    
+        fifth_in_fraction = Fraction(fifth).limit_denominator()
+        string_fifth_in_fraction = str(Fraction(fifth).limit_denominator())
+        print(fifth_in_fraction)
+    
+        ordinary = (f"y = {m}x {fifth_in_fraction}")
+        print(ordinary)
+
+    
+        d3, d4 = string_fifth_in_fraction.split("/")
+        d3, d4 = int(d3), int(d4)
+        print(d3)
+        print(d4)
+    
+        B =d4 #y value
+
+        A = m*d4 
         C = d3
 
-    General = (f"{A}x {B_alpha}y {C} = 0")
-    print(f"The general equation is: {General}")
+        if A <= -1:
+            A = ((m*d4)*-1)
+            B_alpha = B
+            C = (d3*-1)
+        elif A >= 1:
+            A = d1
+            B_alpha = (B*-1)
+            C = m*d4
 
+        General = (f"{A}x {B_alpha}y {C} = 0")
+        print(General)
+    
+    elif m.is_integer() == False and fifth.is_integer() == True:
+        m_in_fraction = Fraction(m).limit_denominator()
+        string_m_in_fraction = str(Fraction(m).limit_denominator())
+        print(m_in_fraction)
+    
+    
+    
+        ordinary = (f"y = {m_in_fraction}x {fifth}")
+        print(ordinary)
+
+        d1, d2 = string_m_in_fraction.split("/")
+        d1, d2 = int(d1), int(d2)
+        print(d1)
+        print(d2)
+        
+        B = d2
+        
+
+        A = d1 
+        C = fifth*d2
+
+        if A <= -1:
+            A = ((fifth*d2)*-1)
+            B_alpha = B
+            C = (d3*-1)
+        elif A >= 1:
+            A = d1
+            B_alpha = (B*-1)
+            C = fifth*d2
+
+        General = (f"{A}x {B_alpha}y {C} = 0")
+        print(General)
+    
+    if m.is_integer() == True and fifth.is_integer() == True:
+        
+        ordinary = (f"y = {m}x {fifth}")
+        print(ordinary)
+    
+        
+        B = 1
+        
+
+        A = m
+        C = fifth
+
+        if A <= -1:
+            A = (m*-1)
+            B_alpha = B
+            C = (fifth*-1)
+        elif A >= 1:
+            A = m
+            B_alpha = (B*-1)
+            C = fifth
+
+        General = (f"{A}x {B_alpha}y {C} = 0")
+        print(General)
+
+def Symmetric_equation_to_ordinary():
+    a1, a2 = input("The value of a in the equation in fraction: ").split("/")
+    a1, a2 = int(a1), int(a2)
+    print(a1, a2)
+
+    b1, b2 = input("The value of b in the equation in fraction: ").split("/")
+    b1, b2 = int(b1), int(b2)
+    print(b1, b2)
+
+    a = (a1/a2)
+    b = (b1/b2)
+    print(a, b)
+
+    denominator =  (a*b)
+    print(denominator)
+
+    first = (f"{b}x  {a}y / {denominator} = 1")
+    print(first)
+
+    second = (f"{b}x  {a}y = {denominator}")
+    print(second)
+
+    denominator_other_side = (denominator*-1)
+    general = (f"{b}x  {a}y {denominator_other_side} = 0")
+    print(general)
+
+    m = ((-1*b)/a)
+    b_de_la_otra = ((-1*denominator_other_side)/a)
+    print(m, b_de_la_otra)
+
+    if m.is_integer() == False and b.is_integer() == False:
+        m_in_fraction = Fraction(m).limit_denominator()
+        string_m_in_fraction = str(Fraction(m).limit_denominator())
+        b_in_fraction = Fraction(b_de_la_otra).limit_denominator()
+        string_b_in_fraction = str(Fraction(b_de_la_otra).limit_denominator())
+        ordinary = (f"y = {m_in_fraction}x  {b_in_fraction}")
+        print(ordinary)
+    elif m.is_integer() == True and b_de_la_otra.is_integer() == False:
+        m = int(m)
+        b_in_fraction = Fraction(b_de_la_otra).limit_denominator()
+        string_b_in_fraction = str(Fraction(b_de_la_otra).limit_denominator())
+        ordinary = (f"y = {m}x  {b_in_fraction}")
+        print(ordinary)
+    elif m.is_integer() == False and b_de_la_otra.is_integer() == True:
+        b_de_la_otra = int(b_de_la_otra)
+        m_in_fraction = Fraction(m).limit_denominator()
+        string_m_in_fraction = str(Fraction(m).limit_denominator())
+        ordinary = (f"y = {m_in_fraction}x  {b_de_la_otra}")
+        print(ordinary)
+    elif m.is_integer() == True and b_de_la_otra.is_integer == True:
+        m = int(m) 
+        b_de_la_otra = int(b_de_la_otra)
+        ordinary = (f"y = {m}x  {b_de_la_otra}")
+        print(ordinary)
+        
+    #p1, p2 = input("Enter the symmetric equation: ").split("+")
+    #print(p1, p2)
+
+    #f1, f2 = p1.split("/")
+    #f3, f4 = p2.split("/")
+    #f2 , f4 = float(f2), float(f4)
+    #print(f1, f2) # f2 is the int
+    #print(f3, f4) # f4 is the int
+
+    #denominator =  f2*f4
+    #print(denominator)
+
+    #first = (f"{f4}x  {f2}y / {denominator} = 1")
+    #print(first)
+
+    #second = (f"{f4}x  {f2}y = {denominator}")
+    #print(second)
+
+    #denominatorother_side = (denominator*-1)
+    #general = (f"{f4}x  {f2}y {denominatorother_side} = 0")
+    #print(general)
+
+    #m = ((-1*f4)/f2)
+    #b = ((-1*denominatorother_side)/f2)
+    #print(m, b)
+        
+    #if m.is_integer() == False and b.is_integer() == False:
+    #    m_in_fraction = Fraction(m).limit_denominator()
+    #    string_m_in_fraction = str(Fraction(m).limit_denominator())
+    #    b_in_fraction = Fraction(b).limit_denominator()
+    #    string_b_in_fraction = str(Fraction(b).limit_denominator())
+    #    ordinary = (f"y = {m_in_fraction}x  {b_in_fraction}")
+    #    print(ordinary)
+    #elif m.is_integer() == True and b.is_integer() == False:
+    #    b_in_fraction = Fraction(b).limit_denominator()
+    #    string_b_in_fraction = str(Fraction(b).limit_denominator())
+    #    ordinary = (f"y = {m}x  {b_in_fraction}")
+    #   print(ordinary)
+    #elif m.is_integer() == False and b.is_integer() == True:
+    #    m_in_fraction = Fraction(m).limit_denominator()
+    #    string_m_in_fraction = str(Fraction(m).limit_denominator())
+    #    ordinary = (f"y = {m_in_fraction}x  {b}")
+    #    print(ordinary)
+    #elif m.is_integer() == True and b.is_integer == True:
+    #    ordinary = (f"y = {m}x  {b}")
+    #    print(ordinary)
+
+
+    #if m.is_integer() == True and b.is_integer == True:
+        #ordinary = (f"y = {m}x - {b}")
+        #print(ordinary)
+    #elif m.is_integer() == False and b.is_integer() == True:
+        #m_in_fraction = Fraction(m).limit_denominator()
+        #string_m_in_fraction = str(Fraction(m).limit_denominator())
+        #ordinary = (f"y = {m_in_fraction}x - {b}")
+        #print(ordinary)
+    #elif m.is_integer() == True and b.is_integer() == False:
+        #b_in_fraction = Fraction(b).limit_denominator()
+        #string_b_in_fraction = str(Fraction(b).limit_denominator())
+        #ordinary = (f"y = {m}x + {b_in_fraction}")
+        #print(ordinary)
+    #elif m.is_integer() == False and b.is_integer() == False:
+        #m_in_fraction = Fraction(m).limit_denominator()
+        #string_m_in_fraction = str(Fraction(m).limit_denominator())
+        #b_in_fraction = Fraction(b).limit_denominator()
+        #string_b_in_fraction = str(Fraction(b).limit_denominator())
+        #ordinary = (f"y = {m_in_fraction}x + {b_in_fraction}")
+        #print(ordinary)    
+
+def general_to_symmetric_equations():
+    A1, B1, C1 = input("Enter the value of A, B and C: ").split(" ")
+
+    A2, x_letra = A1.split("x")
+    B2, y_letra = B1.split("y")
+    C2 = C1
+
+    A, B, C = int(A2), int(B2), int(C2)
+    print(A, B, C)
+
+    if C <= -1 : # C is a negative number
+        C_del_otro_lado = (C*-1)
+        print(C_del_otro_lado)
+
+        first = print(f"{A}x {B}y = {C_del_otro_lado}")
+        second = print(f"{A}x/{C_del_otro_lado} {B}y/{C_del_otro_lado} = {C_del_otro_lado}/{C_del_otro_lado}")
+
+        if A != 0 and B != 0: # Both A and B aren't equal to 0
+            
+            if (C_del_otro_lado/A).is_integer() == True and (C_del_otro_lado/B).is_integer() == True:
+                f_A = (C_del_otro_lado/A)
+                f_A = int(f_A)
+
+                f_B = (C_del_otro_lado/B)
+                f_B = int(f_B)
+
+                symmetric = print(f"x/{f_A} y/{f_B} = {C_del_otro_lado/C_del_otro_lado}")
+
+            elif (C_del_otro_lado/A).is_integer() == True and (C_del_otro_lado/B).is_integer() == False:
+                f_A = (C_del_otro_lado/A)
+                f_A = int(f_A)
+                
+                symmetric = print(f"x/{f_A} y/{C_del_otro_lado}/{B} = {C_del_otro_lado/C_del_otro_lado}")
+
+            elif (C_del_otro_lado/A).is_integer() == False and (C_del_otro_lado/B).is_integer() == True:
+                f_B = (C_del_otro_lado/B)
+                f_B = int(f_B)
+                
+                symmetric = print(f"x/{C_del_otro_lado}/{A} y/{f_B} = {C_del_otro_lado/C_del_otro_lado}")
+
+            elif (C_del_otro_lado/A).is_integer() == False and (C_del_otro_lado/B).is_integer() == False:
+                symmetric = print(f"x/{C_del_otro_lado}/{A} y/{C_del_otro_lado}/{B} = {C_del_otro_lado/C_del_otro_lado} ")
+
+        elif A == 0 and B != 0:
+            if (C_del_otro_lado/B).is_integer() == False:
+                symmetric = print(f"x/{C_del_otro_lado} y/{C_del_otro_lado}/{B} = {C_del_otro_lado/C_del_otro_lado}")
+
+            elif (C_del_otro_lado/B).is_integer() == True:
+                f_B = (C_del_otro_lado/B)
+                f_B = int(f_B)
+
+                symmetric = print(f"x/{C_del_otro_lado} y/{f_B} = {C_del_otro_lado/C_del_otro_lado}")
+
+        elif A != 0 and B == 0:
+            if (C_del_otro_lado/B).is_integer() == False:
+                symmetric = print(f"x/{C_del_otro_lado}/{A} y/{C_del_otro_lado} = {C_del_otro_lado/C_del_otro_lado}")
+                
+            elif (C_del_otro_lado/B).is_integer() == True:
+                f_A = (C_del_otro_lado/A)
+                f_A = int(f_A)
+                symmetric = print(f"x/{f_A} y/{C_del_otro_lado} = {C_del_otro_lado/C_del_otro_lado}")
+
+        elif A == 0 and B == 0:
+            symmetric = print(f"x/{C_del_otro_lado} y/{C_del_otro_lado} = {C_del_otro_lado/C_del_otro_lado}")
+
+    if C >= -1 : # C is a positive number
+        C_del_otro_lado = (C*-1)
+        print(C_del_otro_lado)
+
+        first = print(f"{A}x {B}y = {C_del_otro_lado}")
+        second = print(f"{A}x/{C_del_otro_lado} {B}y/{C_del_otro_lado} = {C_del_otro_lado}/{C_del_otro_lado}")
+
+        if A != 0 and B != 0: # Both A and B aren't equal to 0
+            
+            if (C_del_otro_lado/A).is_integer() == True and (C_del_otro_lado/B).is_integer() == True:
+                f_A = (C_del_otro_lado/A)
+                f_A = int(f_A)
+
+                f_B = (C_del_otro_lado/B)
+                f_B = int(f_B)
+
+                symmetric = print(f"x/{f_A} y/{f_B} = {C_del_otro_lado/C_del_otro_lado}")
+
+            elif (C_del_otro_lado/A).is_integer() == True and (C_del_otro_lado/B).is_integer() == False:
+                f_A = (C_del_otro_lado/A)
+                f_A = int(f_A)
+                
+                symmetric = print(f"x/{f_A} y/{C_del_otro_lado}/{B} = {C_del_otro_lado/C_del_otro_lado}")
+
+            elif (C_del_otro_lado/A).is_integer() == False and (C_del_otro_lado/B).is_integer() == True:
+                f_B = (C_del_otro_lado/B)
+                f_B = int(f_B)
+                
+                symmetric = print(f"x/{C_del_otro_lado}/{A} y/{f_B} = {C_del_otro_lado/C_del_otro_lado}")
+
+            elif (C_del_otro_lado/A).is_integer() == False and (C_del_otro_lado/B).is_integer() == False:
+                symmetric = print(f"x/{C_del_otro_lado}/{A} y/{C_del_otro_lado}/{B} = {C_del_otro_lado/C_del_otro_lado} ")
+
+        elif A == 0 and B != 0:
+            if (C_del_otro_lado/B).is_integer() == False:
+                symmetric = print(f"x/{C_del_otro_lado} y/{C_del_otro_lado}/{B} = {C_del_otro_lado/C_del_otro_lado}")
+
+            elif (C_del_otro_lado/B).is_integer() == True:
+                f_B = (C_del_otro_lado/B)
+                f_B = int(f_B)
+
+                symmetric = print(f"x/{C_del_otro_lado} y/{f_B} = {C_del_otro_lado/C_del_otro_lado}")
+
+        elif A != 0 and B == 0:
+            if (C_del_otro_lado/B).is_integer() == False:
+                symmetric = print(f"x/{C_del_otro_lado}/{A} y/{C_del_otro_lado} = {C_del_otro_lado/C_del_otro_lado}")
+                
+            elif (C_del_otro_lado/B).is_integer() == True:
+                f_A = (C_del_otro_lado/A)
+                f_A = int(f_A)
+                symmetric = print(f"x/{f_A} y/{C_del_otro_lado} = {C_del_otro_lado/C_del_otro_lado}")
+
+        elif A == 0 and B == 0:
+            symmetric = print(f"x/{C_del_otro_lado} y/{C_del_otro_lado} = {C_del_otro_lado/C_del_otro_lado}")
+
+def points_to_general_circumference_equation():
+    h, k = input("\nEnter the coordinate \033[0;35;40m(x, y)\033[0;37;40m: ").split()
+    h, k = int(h), int(k)
+
+    r = input("\nEnter the radius \033[0;34;40mr\033[0;37;40m: ")
+    r = float(r)
+
+    if h <= -1 and k <= -1: # Both are negative
+        ordinary = (f"(x + {h*-1})² + (y + {k*-1})² = {r **2}")
+        print(ordinary)
+
+        F = (((h **2)+(k **2))-(r **2))
+        print(F)
+        
+        general = (f"x² + y² + {2*(h*-1)}x + {2*(k*-1)}y {F} = 0")
+        print(general)
+
+    elif h <= -1 and k >= 1: # h is negative and k is positive
+        ordinary = (f"(x + {h*-1})² + (y - {k})² = {r **2}")
+        print(ordinary)
+
+        F = (((h **2)+(k **2))-(r **2))
+        print(F)
+        
+        general = (f"x² + y² + {2*(h*-1)}x  {2*(k)}y {F} = 0")
+        print(general)
+
+    elif h >= 1 and k <= -1: # h is positive and k is negative
+        ordinary = (f"(x - {h})² + (y + {k*-1})² = {r **2}")
+        print(ordinary)
+
+        F = (((h **2)+(k **2))-(r **2))
+        print(F)
+        
+        general = (f"x² + y² - {2*(h)}x + {2*(k*-1)}y {F} = 0")
+        print(general)
+
+    elif h >= 1 and k >= 1: #Both are positive
+        ordinary = (f"(x - {h})² + (y - {k})² = {r **2}")
+        print(ordinary)
+
+        F = (((h **2)+(k **2))-(r **2))
+        print(F)
+        
+        general = (f"x² + y² - {2*(h)}x - {2*(k)}y {F} = 0")
+        print(general)
+    
+    elif h <= -1 and k == 0: 
+        ordinary = (f"(x + {h*-1})² + y² = {r **2}")
+        print(ordinary)
+
+        F = (((h **2)+(k **2))-(r **2))
+        print(F)
+        
+        general = (f"x² + y² + {2*(h*-1)}x  {F} = 0")
+        print(general)
+
+    elif h == 0 and k <= -1: 
+        ordinary = (f"x² + (y + {k*-1})² = {r **2}")
+        print(ordinary)
+
+        F = (((h **2)+(k **2))-(r **2))
+        print(F)
+        
+        general = (f"x² + y² + {2*(k*-1)}y {F} = 0")
+        print(general)
+    
+    elif h >= -1 and k == 0:
+        ordinary = (f"(x - {h})² + y² = {r **2}")
+        print(ordinary)
+
+        F = (((h **2)+(k **2))-(r **2))
+        print(F)
+        
+        general = (f"x² + y² - {2*(h)}x {F} = 0")
+        print(general)
+    
+    elif h == 0 and k >= -1:
+        ordinary = (f"x² + (y - {k})² = {r **2}")
+        print(ordinary)
+
+        F = (((h **2)+(k **2))-(r **2))
+        print(F)
+        
+        general = (f"x² + y² - {2*(k)}y {F} = 0")
+        print(general)
+    
+    elif h == 0 and k == 0:
+        ordinary = (f"x² + y² = {r **2}")
+        print(ordinary)
+
+        F = (((h **2)+(k **2))-(r **2))
+        print(F)
+        
+        general = (f"x² + y²0 {F} = 0")
+        print(general)
+
+def from_general_to_points():
+    D = input("Enter the value of Dx: ")
+    E = input("Enter the value of Ey: ")
+    F = input("Enter the value of F: ")
+    D, E, F = int(D), int(E), int(F)
+
+    if D != 0 and E != 0:
+        h = (-1*D)/2
+        k = (-1*E)/2
+
+        print(f"\nThe coordinates of the center of the circle are: ({h}, {k})")
+
+        pre_r = (((h**2) + (k**2))-(F))
+        print(pre_r)
+        r = math.sqrt(pre_r)
+
+        print(f"\nThe radius of the circle is: {r}")
+    
+    elif D == 0 and E != 0:
+        h = 0
+        k = (-1*E)/2
+    
+        print(f"\nThe coordinates of the center of the circle are: ({h}, {k})")
+
+        pre_r = (((h**2) + (k**2))-(F))
+        print(pre_r)
+        r = math.sqrt(pre_r)
+
+        print(f"\nThe radius of the circle is: {r}")
+    
+    elif D != 0 and E == 0:
+        h = (-1*D)/2
+        k = 0
+
+        print(f"\nThe coordinates of the center of the circle are: ({h}, {k})")
+
+        pre_r = (((h**2) + (k**2))-(F))
+        print(pre_r)
+        r = math.sqrt(pre_r)
+
+        print(f"\nThe radius of the circle is: {r}")
+    
+    elif E == 0 and F == 0:
+        h = 0
+        k = 0
+
+        print(f"\nThe coordinates of the center of the circle are: ({h}, {k})")
+
+        pre_r = (((h**2) + (k**2))-(F))
+        print(pre_r)
+        r = math.sqrt(pre_r)
+
+        print(f"\nThe radius of the circle is: {r}")
