@@ -261,7 +261,6 @@ def point_slope_equaton_of_a_line():
         ordinary = (f"y = {m}x {fifth_in_fraction}")
         print(ordinary)
 
-    
         d3, d4 = string_fifth_in_fraction.split("/")
         d3, d4 = int(d3), int(d4)
         print(d3)
@@ -288,8 +287,6 @@ def point_slope_equaton_of_a_line():
         m_in_fraction = Fraction(m).limit_denominator()
         string_m_in_fraction = str(Fraction(m).limit_denominator())
         print(m_in_fraction)
-    
-    
     
         ordinary = (f"y = {m_in_fraction}x {fifth}")
         print(ordinary)
@@ -322,10 +319,8 @@ def point_slope_equaton_of_a_line():
         ordinary = (f"y = {m}x {fifth}")
         print(ordinary)
     
-        
         B = 1
         
-
         A = m
         C = fifth
 
@@ -427,7 +422,6 @@ def Equation_of_a_line_that_passes_through_2_points():
     
         ordinary = (f"y = {m}x {fifth_in_fraction}")
         print(ordinary)
-
     
         d3, d4 = string_fifth_in_fraction.split("/")
         d3, d4 = int(d3), int(d4)
@@ -456,8 +450,6 @@ def Equation_of_a_line_that_passes_through_2_points():
         string_m_in_fraction = str(Fraction(m).limit_denominator())
         print(m_in_fraction)
     
-    
-    
         ordinary = (f"y = {m_in_fraction}x {fifth}")
         print(ordinary)
 
@@ -468,7 +460,6 @@ def Equation_of_a_line_that_passes_through_2_points():
         
         B = d2
         
-
         A = d1 
         C = fifth*d2
 
@@ -488,11 +479,9 @@ def Equation_of_a_line_that_passes_through_2_points():
         
         ordinary = (f"y = {m}x {fifth}")
         print(ordinary)
-    
         
         B = 1
         
-
         A = m
         C = fifth
 
