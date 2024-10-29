@@ -313,8 +313,8 @@ def point_slope_equaton_of_a_line():
             B_alpha = (bM*-1)
             cM = fifth*d2
 
-        General = (f"{aM}x {B_alpha}y {cM} = 0")
-        print(f"\nThe general equation is:\033[0;35;40m {General}\033[0;37;40m\n")
+            General = (f"{aM}x {B_alpha}y {cM} = 0")
+            print(f"\nThe general equation is:\033[0;35;40m {General}\033[0;37;40m\n")
     
     if m.is_integer() == True and fifth.is_integer() == True:
         
@@ -335,8 +335,8 @@ def point_slope_equaton_of_a_line():
             B_alpha = (bM*-1)
             cM = fifth
 
-        General = (f"{aM}x {B_alpha}y {cM} = 0")
-        print(f"\nThe general equation is:\033[0;35;40m {General}\033[0;37;40m\n")
+            General = (f"{aM}x {B_alpha}y {cM} = 0")
+            print(f"\nThe general equation is:\033[0;35;40m {General}\033[0;37;40m\n")
 
 def Equation_of_a_line_that_passes_through_2_points():
     x1, y1 = input("\nEnter the first coordinate \033[0;35;40m(x, y)\033[0;37;40m: ").split()
@@ -397,14 +397,16 @@ def Equation_of_a_line_that_passes_through_2_points():
         d3, d4 = int(d3), int(d4)
         #print(d3)
         #print(d4)
+
+        aM = d1 
+        cM = d3
     
         if d2 == d4:
             bM = d2
         elif d2 != d4:
             bM = (d2*d4)
 
-            aM = d1 
-            cM = d3
+            
 
         if aM <= -1:
             aM = (d1*-1)
@@ -415,8 +417,8 @@ def Equation_of_a_line_that_passes_through_2_points():
             B_alpha = (bM*-1)
             cM = d3
 
-        General = (f"{aM}x {B_alpha}y {cM} = 0")
-        print(f"\nThe general equation is:\033[0;35;40m {General}\033[0;37;40m\n")
+            General = (f"{aM}x {B_alpha}y {cM} = 0")
+            print(f"\nThe general equation is:\033[0;35;40m {General}\033[0;37;40m\n")
         
     elif m.is_integer() == True and fifth.is_integer() == False:
     
@@ -446,8 +448,8 @@ def Equation_of_a_line_that_passes_through_2_points():
             B_alpha = (bM*-1)
             cM = m*d4
 
-        General = (f"{aM}x {B_alpha}y {cM} = 0")
-        print(f"\nThe general equation is:\033[0;35;40m {General}\033[0;37;40m\n")
+            General = (f"{aM}x {B_alpha}y {cM} = 0")
+            print(f"\nThe general equation is:\033[0;35;40m {General}\033[0;37;40m\n")
     
     elif m.is_integer() == False and fifth.is_integer() == True:
         m_in_fraction = Fraction(m).limit_denominator()
@@ -477,8 +479,8 @@ def Equation_of_a_line_that_passes_through_2_points():
             B_alpha = (bM*-1)
             cM = fifth*d2
 
-        General = (f"{aM}x {B_alpha}y {cM} = 0")
-        print(f"\nThe general equation is:\033[0;35;40m {General}\033[0;37;40m\n")
+            General = (f"{aM}x {B_alpha}y {cM} = 0")
+            print(f"\nThe general equation is:\033[0;35;40m {General}\033[0;37;40m\n")
     
     if m.is_integer() == True and fifth.is_integer() == True:
         
@@ -499,15 +501,15 @@ def Equation_of_a_line_that_passes_through_2_points():
             B_alpha = (bM*-1)
             cM = fifth
 
-        General = (f"{aM}x {B_alpha}y {cM} = 0")
-        print(f"\nThe general equation is:\033[0;35;40m {General}\033[0;37;40m\n")
+            General = (f"{aM}x {B_alpha}y {cM} = 0")
+            print(f"\nThe general equation is:\033[0;35;40m {General}\033[0;37;40m\n")
 
 def Symmetric_equation_to_ordinary():
-    a1, a2 = input("\nEnter the value of a in fraction \033[0;34;40m / \033[0;37;40m: ").split("/")
+    a1, a2 = input("\nEnter the value of \033[0;32;40m a \033[0;37;40m in fraction \033[0;34;40m / \033[0;37;40m: ").split("/")
     a1, a2 = int(a1), int(a2)
     #print(a1, a2)
 
-    b1, b2 = input("\nEnter the value of b in fraction \033[0;34;40m / \033[0;37;40m: ").split("/")
+    b1, b2 = input("\nEnter the value of \033[0;34;40m a \033[0;37;40m in fraction \033[0;34;40m / \033[0;37;40m: ").split("/")
     b1, b2 = int(b1), int(b2)
     #print(b1, b2)
 
