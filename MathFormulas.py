@@ -856,7 +856,7 @@ def points_to_general_circumference_equation():
 
         F = (((h **2)+(k **2))-(r **2))
         
-        general = (f"x² + y²0 {F} = 0")
+        general = (f"x² + y² {F} = 0")
         print(f"\nThe general equation is:\033[0;35;40m {general}\033[0;37;40m\n")
 
 def from_general_to_points():
