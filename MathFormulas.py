@@ -911,4 +911,3 @@ def from_general_to_points():
 
         print(f"\nThe radius of the circle is: \033[0;32;40m{r}\033[0;37;40m\n")
 
-Symmetric_equation_to_ordinary()
