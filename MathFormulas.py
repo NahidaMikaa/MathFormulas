@@ -856,6 +856,7 @@ def points_to_general_circumference_equation():
         F_in_fraction = Fraction(F).limit_denominator()
         
         general = (f"x² + y² {F_in_fraction} = 0")
+        general = (f"x² + y² {F} = 0")
         print(f"\nThe general equation is:\033[0;35;40m {general}\033[0;37;40m\n")
 
     elif h < 0 and k == 0: 
