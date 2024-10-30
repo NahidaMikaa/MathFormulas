@@ -772,93 +772,149 @@ def general_to_symmetric_equations():
             print(f"\nThis is the symmetric equation:\033[0;32;40m {symmetric}\033[0;37;40m\n")
 
 def points_to_general_circumference_equation():
-    h, k = input("\nEnter the coordinate \033[0;35;40m(x, y)\033[0;37;40m: ").split()
-    h, k = int(h), int(k)
+    h1_1, k1_1 = input("\nEnter the coordinate in fraction \033[0;35;40m(x, y)\033[0;37;40m: ").split(",")
 
-    r = input("\nEnter the radius \033[0;34;40mr\033[0;37;40m: ")
+    h1_2, k1_2 = str(h1_1), str(k1_1)
+    h1, h2 = h1_2.split("/")
+    k1, k2 = k1_2.split("/")
+
+    h1, h2, k1, k2 = float(h1), float(h2), float(k1), float(k2)
+    h = (h1/h2)
+    k = (k1/k2)
+    h, k = float(h), float(k)
+
+    r1, r2 = input("\nEnter the radius in fraction \033[0;34;40mr\033[0;37;40m: ").split("/")
+    r1, r2 = float(r1), float(r2)
+    r = (r1/r2)
     r = float(r)
 
-    if h <= -1 and k <= -1: # Both are negative
-        ordinary = (f"(x + {h*-1})² + (y + {k*-1})² = {r **2}")
+    if h < 0 and k < 0: # Both are negative
+        h_in_fraction = Fraction(h).limit_denominator()
+        k_in_fraction = Fraction(k).limit_denominator()
+        r_in_fraction = Fraction(r).limit_denominator()
+
+        ordinary = (f"(x + {h_in_fraction*-1})² + (y + {k_in_fraction*-1})² = {r_in_fraction **2}")
         print(f"\nThe ordinary equation is:\033[0;34;40m {ordinary}\033[0;37;40m")
 
         F = (((h **2)+(k **2))-(r **2))
+        F_in_fraction = Fraction(F).limit_denominator()
         
-        general = (f"x² + y² + {2*(h*-1)}x + {2*(k*-1)}y {F} = 0")
+        general = (f"x² + y² + {2*(h_in_fraction*-1)}x + {2*(k_in_fraction*-1)}y {F_in_fraction} = 0")
         print(f"\nThe general equation is:\033[0;35;40m {general}\033[0;37;40m\n")
 
-    elif h <= -1 and k >= 1: # h is negative and k is positive
-        ordinary = (f"(x + {h*-1})² + (y - {k})² = {r **2}")
+    elif h < 0 and k > 0: # h is negative and k is positive
+        h_in_fraction = Fraction(h).limit_denominator()
+        k_in_fraction = Fraction(k).limit_denominator()
+        r_in_fraction = Fraction(r).limit_denominator()
+        
+        ordinary = (f"(x + {h_in_fraction*-1})² + (y - {k_in_fraction})² = {r_in_fraction **2}")
         print(f"\nThe ordinary equation is:\033[0;34;40m {ordinary}\033[0;37;40m")
 
         F = (((h **2)+(k **2))-(r **2))
+        F_in_fraction = Fraction(F).limit_denominator()
         
-        general = (f"x² + y² + {2*(h*-1)}x  {2*(k)}y {F} = 0")
+        general = (f"x² + y² + {2*(h_in_fraction*-1)}x - {2*(k_in_fraction)}y {F_in_fraction} = 0")
         print(f"\nThe general equation is:\033[0;35;40m {general}\033[0;37;40m\n")
 
-    elif h >= 1 and k <= -1: # h is positive and k is negative
-        ordinary = (f"(x - {h})² + (y + {k*-1})² = {r **2}")
+    elif h > 0 and k < 0: # h is positive and k is negative
+        h_in_fraction = Fraction(h).limit_denominator()
+        k_in_fraction = Fraction(k).limit_denominator()
+        r_in_fraction = Fraction(r).limit_denominator()
+
+        ordinary = (f"(x - {h_in_fraction})² + (y + {k_in_fraction*-1})² = {r_in_fraction **2}")
         print(f"\nThe ordinary equation is:\033[0;34;40m {ordinary}\033[0;37;40m")
 
         F = (((h **2)+(k **2))-(r **2))
+        F_in_fraction = Fraction(F).limit_denominator()
         
-        general = (f"x² + y² - {2*(h)}x + {2*(k*-1)}y {F} = 0")
+        general = (f"x² + y² - {2*(h_in_fraction)}x + {2*(k_in_fraction*-1)}y {F_in_fraction} = 0")
         print(f"\nThe general equation is:\033[0;35;40m {general}\033[0;37;40m\n")
 
-    elif h >= 1 and k >= 1: #Both are positive
-        ordinary = (f"(x - {h})² + (y - {k})² = {r **2}")
+    elif h > 0 and k > 0: #Both are positive
+        h_in_fraction = Fraction(h).limit_denominator()
+        k_in_fraction = Fraction(k).limit_denominator()
+        r_in_fraction = Fraction(r).limit_denominator()
+
+        ordinary = (f"(x - {h_in_fraction})² + (y - {k_in_fraction})² = {r_in_fraction **2}")
         print(f"\nThe ordinary equation is:\033[0;34;40m {ordinary}\033[0;37;40m")
 
         F = (((h **2)+(k **2))-(r **2))
+        F_in_fraction = Fraction(F).limit_denominator()
         
-        general = (f"x² + y² - {2*(h)}x - {2*(k)}y {F} = 0")
-        print(f"\nThe general equation is:\033[0;35;40m {general}\033[0;37;40m\n")
-    
-    elif h <= -1 and k == 0: 
-        ordinary = (f"(x + {h*-1})² + y² = {r **2}")
-        print(f"\nThe ordinary equation is:\033[0;34;40m {ordinary}\033[0;37;40m")
-
-        F = (((h **2)+(k **2))-(r **2))
-        
-        general = (f"x² + y² + {2*(h*-1)}x  {F} = 0")
+        general = (f"x² + y² - {2*(h_in_fraction)}x - {2*(k_in_fraction)}y {F_in_fraction} = 0")
         print(f"\nThe general equation is:\033[0;35;40m {general}\033[0;37;40m\n")
 
-    elif h == 0 and k <= -1: 
-        ordinary = (f"x² + (y + {k*-1})² = {r **2}")
-        print(f"\nThe ordinary equation is:\033[0;34;40m {ordinary}\033[0;37;40m")
-
-        F = (((h **2)+(k **2))-(r **2))
-        
-        general = (f"x² + y² + {2*(k*-1)}y {F} = 0")
-        print(f"\nThe general equation is:\033[0;35;40m {general}\033[0;37;40m\n")
-    
-    elif h >= -1 and k == 0:
-        ordinary = (f"(x - {h})² + y² = {r **2}")
-        print(f"\nThe ordinary equation is:\033[0;34;40m {ordinary}\033[0;37;40m")
-
-        F = (((h **2)+(k **2))-(r **2))
-        
-        general = (f"x² + y² - {2*(h)}x {F} = 0")
-        print(f"\nThe general equation is:\033[0;35;40m {general}\033[0;37;40m\n")
-    
-    elif h == 0 and k >= -1:
-        ordinary = (f"x² + (y - {k})² = {r **2}")
-        print(f"\nThe ordinary equation is:\033[0;34;40m {ordinary}\033[0;37;40m")
-
-        F = (((h **2)+(k **2))-(r **2))
-        
-        general = (f"x² + y² - {2*(k)}y {F} = 0")
-        print(f"\nThe general equation is:\033[0;35;40m {general}\033[0;37;40m\n")
-    
     elif h == 0 and k == 0:
-        ordinary = (f"x² + y² = {r **2}")
+        h_in_fraction = Fraction(h).limit_denominator()
+        k_in_fraction = Fraction(k).limit_denominator()
+        r_in_fraction = Fraction(r).limit_denominator()
+
+        ordinary = (f"x² + y² = {r_in_fraction **2}")
         print(f"\nThe ordinary equation is:\033[0;34;40m {ordinary}\033[0;37;40m")
 
         F = (((h **2)+(k **2))-(r **2))
+        F_in_fraction = Fraction(F).limit_denominator()
         
-        general = (f"x² + y²0 {F} = 0")
+        general = (f"x² + y² {F_in_fraction} = 0")
         print(f"\nThe general equation is:\033[0;35;40m {general}\033[0;37;40m\n")
 
+    elif h < 0 and k == 0: 
+        h_in_fraction = Fraction(h).limit_denominator()
+        k_in_fraction = Fraction(k).limit_denominator()
+        r_in_fraction = Fraction(r).limit_denominator()
+
+        ordinary = (f"(x + {h_in_fraction*-1})² + y² = {r_in_fraction **2}")
+        print(f"\nThe ordinary equation is:\033[0;34;40m {ordinary}\033[0;37;40m")
+
+        F = (((h **2)+(k **2))-(r **2))
+        F_in_fraction = Fraction(F).limit_denominator()
+        
+        general = (f"x² + y² + {2*(h_in_fraction*-1)}x  {F_in_fraction} = 0")
+        print(f"\nThe general equation is:\033[0;35;40m {general}\033[0;37;40m\n")
+
+    elif h == 0 and k < 0: 
+        h_in_fraction = Fraction(h).limit_denominator()
+        k_in_fraction = Fraction(k).limit_denominator()
+        r_in_fraction = Fraction(r).limit_denominator()
+
+        ordinary = (f"x² + (y + {k_in_fraction*-1})² = {r_in_fraction **2}")
+        print(f"\nThe ordinary equation is:\033[0;34;40m {ordinary}\033[0;37;40m")
+
+        F = (((h **2)+(k **2))-(r **2))
+        F_in_fraction = Fraction(F).limit_denominator()
+        
+        general = (f"x² + y² + {2*(k_in_fraction*-1)}y {F_in_fraction} = 0")
+        print(f"\nThe general equation is:\033[0;35;40m {general}\033[0;37;40m\n")
+    
+    elif h > 0 and k == 0:
+        h_in_fraction = Fraction(h).limit_denominator()
+        k_in_fraction = Fraction(k).limit_denominator()
+        r_in_fraction = Fraction(r).limit_denominator()
+
+        ordinary = (f"(x - {h_in_fraction})² + y² = {r_in_fraction **2}")
+        print(f"\nThe ordinary equation is:\033[0;34;40m {ordinary}\033[0;37;40m")
+
+        F = (((h **2)+(k **2))-(r **2))
+        F_in_fraction = Fraction(F).limit_denominator()
+        
+        general = (f"x² + y² - {2*(h_in_fraction)}x {F_in_fraction} = 0")
+        print(f"\nThe general equation is:\033[0;35;40m {general}\033[0;37;40m\n")
+    
+    elif h == 0 and k > 0:
+        h_in_fraction = Fraction(h).limit_denominator()
+        k_in_fraction = Fraction(k).limit_denominator()
+        r_in_fraction = Fraction(r).limit_denominator()
+
+        ordinary = (f"x² + (y - {k_in_fraction})² = {r_in_fraction **2}")
+        print(f"\nThe ordinary equation is:\033[0;34;40m {ordinary}\033[0;37;40m")
+
+        F = (((h **2)+(k **2))-(r **2))
+        F_in_fraction = Fraction(F).limit_denominator()
+        
+        general = (f"x² + y² - {2*(k_in_fraction)}y {F_in_fraction} = 0")
+        print(f"\nThe general equation is:\033[0;35;40m {general}\033[0;37;40m\n")
+    
+    
 def from_general_to_points():
     D = input("Enter the value of Dx: ")
     E = input("Enter the value of Ey: ")
