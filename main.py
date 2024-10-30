@@ -327,7 +327,6 @@ def Secondyear_Thirdsemester_Thirdpartial_themeselector():
     print("[","\033[0;34;40m4","\033[0;37;40m] General to Symmetric equation")
     print("[","\033[0;32;40m5","\033[0;37;40m] Points to General circumference equation")
     print("[","\033[0;35;40m6","\033[0;37;40m] General circumference equation to Points" )
-    print("[","\033[0;35;40m6","\033[0;37;40m] General circumference equation to Points")
     print("[","\033[0;31;40m0","\033[0;37;40m] Back\n")
 
 def final_Secondyear_Thirdsemester_Thirdpartial_themeselector():
