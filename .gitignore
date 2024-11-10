@@ -13,3 +13,4 @@ test.cpp
 *.ico
 icon.ico
 /icons
+*.gitignore
