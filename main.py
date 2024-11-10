@@ -360,7 +360,7 @@ def final_Secondyear_Thirdsemester_Thirdpartial_themeselector():
         print("Invalid input.")
 
 def Secondyear_Thirdsemester_Fourthpartial_themeselector():
-    print("\n[","\033[0;35;40m1","\033[0;37;40m] Point-Slope equation of a line")
+    print("\n[","\033[0;35;40m1","\033[0;37;40m] Distance from a point to a line")
     print("[","\033[0;36;40m2","\033[0;37;40m] Equation of a line that passes through 2 points")
     print("[","\033[0;33;40m3","\033[0;37;40m] Symmetric equation to ordinary")
     print("[","\033[0;34;40m4","\033[0;37;40m] General to Symmetric equation")
@@ -375,7 +375,7 @@ def final_Secondyear_Thirdsemester_Fourthpartial_themeselector():
     thirdsemesterFourthPartialTheme = int(thirdsemesterFourthPartialTheme)
 
     if thirdsemesterFourthPartialTheme == 1:
-        mathF.point_slope_equaton_of_a_line()
+        mathF.distance_from_a_point_to_a_line()
         time.sleep(5)
         final_Secondyear_Thirdsemester_Thirdpartial_themeselector()
     elif thirdsemesterFourthPartialTheme == 2:
