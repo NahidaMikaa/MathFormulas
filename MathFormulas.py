@@ -509,7 +509,7 @@ def Symmetric_equation_to_ordinary():
     a1, a2 = int(a1), int(a2)
     #print(a1, a2)
 
-    b1, b2 = input("\nEnter the value of \033[0;34;40m a \033[0;37;40m in fraction \033[0;34;40m / \033[0;37;40m: ").split("/")
+    b1, b2 = input("\nEnter the value of \033[0;34;40m b \033[0;37;40m in fraction \033[0;34;40m / \033[0;37;40m: ").split("/")
     b1, b2 = int(b1), int(b2)
     #print(b1, b2)
 
@@ -629,7 +629,7 @@ def Symmetric_equation_to_ordinary():
         #print(ordinary)    
 
 def general_to_symmetric_equations():
-    A1, B1, C1 = input("Enter the value of A, B and C: ").split(" ")
+    A1, B1, C1 = input("Enter the value of \033[0;34;40mAx\033[0;37;40m, \033[0;36;40mBy\033[0;37;40m and \033[0;35;40mC\033[0;37;40m: ").split(" ")
 
     A2, x_letra = A1.split("x")
     B2, y_letra = B1.split("y")
@@ -970,5 +970,34 @@ def from_general_to_points():
 
         print(f"\nThe radius of the circle is: \033[0;32;40m{r}\033[0;37;40m\n")
 
+def distance_from_a_point_to_a_line():
+    A1, B1, C1 = input("Enter the value of \033[0;34;40mAx\033[0;37;40m, \033[0;36;40mBy\033[0;37;40m and \033[0;35;40mC\033[0;37;40m: ").split(" ")
+
+    A2, x_letra = A1.split("x")
+    B2, y_letra = B1.split("y")
+    C2 = C1
+
+    A, B, C = int(A2), int(B2), int(C2)
+
+    h1_1, k1_1 = input("\nEnter the coordinate in fraction \033[0;35;40m(x, y)\033[0;37;40m: ").split(",")
+
+    h1_2, k1_2 = str(h1_1), str(k1_1)
+    h1, h2 = h1_2.split("/")
+    k1, k2 = k1_2.split("/")
+
+    h1, h2, k1, k2 = float(h1), float(h2), float(k1), float(k2)
+    x = (h1/h2)
+    y = (k1/k2)
+    x, y = float(x), float(y)
+
+    pre_d_half = ((A **2)+(B **2))
+    #print(pre_d_half)
+    d_half = math.sqrt(pre_d_half)
+    #print(d_half)
+    d = abs(((A*x)+(B*y)+(C))/d_half)
+
+    print(f"\nThe distance from the point to the line is: \033[0;32;40m{d}\033[0;37;40m\n and in fraction \033[0;35;40m{Fraction(d).limit_denominator()}\033[0;37;40m")
+
+
 if __name__ == "__main__":
-    slope()
+    distance_from_a_point_to_a_line()

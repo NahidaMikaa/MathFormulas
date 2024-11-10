@@ -4,5 +4,9 @@ ImageToASCII.py
 cd.py
 requirements.txt
 /MathFormulasVenv
-icon.ico
 requirementsPy3.12.txt
+/MathFormulasC#
+/.vscode
+MathFormulasC#.sln
+test.cpp
+*.ico

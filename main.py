@@ -134,7 +134,7 @@ def thirdsemester_partialselector():
     elif thirdsemesterpartials == 3:
         final_Secondyear_Thirdsemester_Thirdpartial_themeselector()
     elif thirdsemesterpartials == 4:
-        print("Partial 4")
+        final_Secondyear_Thirdsemester_Fourthpartial_themeselector()
     elif thirdsemesterpartials == 5:
         print("Institutional Exam")
     elif thirdsemesterpartials == 0: #Back
@@ -308,12 +308,6 @@ def final_Secondyear_Thirdsemester_Secondpartial_themeselector():
         mathF.angle_between_lines()
         time.sleep(5)
         final_Secondyear_Thirdsemester_Secondpartial_themeselector()
-    elif thirdsemesterSecondPartialTheme == 4:
-        time.sleep(5)
-        final_Secondyear_Thirdsemester_Secondpartial_themeselector()
-    elif thirdsemesterSecondPartialTheme == 5:
-        time.sleep(5)
-        final_Secondyear_Thirdsemester_Secondpartial_themeselector()
     elif thirdsemesterSecondPartialTheme == 0: #Back
         time.sleep(2)
         thirdsemester_partialselector()
@@ -365,6 +359,51 @@ def final_Secondyear_Thirdsemester_Thirdpartial_themeselector():
     else:
         print("Invalid input.")
 
+def Secondyear_Thirdsemester_Fourthpartial_themeselector():
+    print("\n[","\033[0;35;40m1","\033[0;37;40m] Point-Slope equation of a line")
+    print("[","\033[0;36;40m2","\033[0;37;40m] Equation of a line that passes through 2 points")
+    print("[","\033[0;33;40m3","\033[0;37;40m] Symmetric equation to ordinary")
+    print("[","\033[0;34;40m4","\033[0;37;40m] General to Symmetric equation")
+    print("[","\033[0;32;40m5","\033[0;37;40m] Points to General circumference equation")
+    print("[","\033[0;35;40m6","\033[0;37;40m] General circumference equation to Points" )
+    print("[","\033[0;31;40m0","\033[0;37;40m] Back\n")
+
+def final_Secondyear_Thirdsemester_Fourthpartial_themeselector():
+    Secondyear_Thirdsemester_Fourthpartial_themeselector()
+
+    thirdsemesterFourthPartialTheme = input("\nEnter the theme: ")
+    thirdsemesterFourthPartialTheme = int(thirdsemesterFourthPartialTheme)
+
+    if thirdsemesterFourthPartialTheme == 1:
+        mathF.point_slope_equaton_of_a_line()
+        time.sleep(5)
+        final_Secondyear_Thirdsemester_Thirdpartial_themeselector()
+    elif thirdsemesterFourthPartialTheme == 2:
+        mathF.Equation_of_a_line_that_passes_through_2_points()
+        time.sleep(5)
+        final_Secondyear_Thirdsemester_Thirdpartial_themeselector()
+    elif thirdsemesterFourthPartialTheme == 3:
+        mathF.Symmetric_equation_to_ordinary()
+        time.sleep(5)
+        final_Secondyear_Thirdsemester_Thirdpartial_themeselector()
+    elif thirdsemesterFourthPartialTheme == 4:
+        mathF.general_to_symmetric_equations()
+        time.sleep(5)
+        final_Secondyear_Thirdsemester_Thirdpartial_themeselector()
+    elif thirdsemesterFourthPartialTheme == 5:
+        mathF.points_to_general_circumference_equation()
+        time.sleep(5)
+        final_Secondyear_Thirdsemester_Thirdpartial_themeselector()
+    elif thirdsemesterFourthPartialTheme == 6:
+        mathF.from_general_to_points()
+        time.sleep(5)
+        final_Secondyear_Thirdsemester_Thirdpartial_themeselector()
+    elif thirdsemesterFourthPartialTheme == 0: #Back
+        time.sleep(2)
+        thirdsemester_partialselector()
+    else:
+        print("Invalid input.")
+
 
 
 print(r'''
@@ -391,5 +430,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
