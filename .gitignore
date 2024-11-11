@@ -5,8 +5,7 @@ cd.py
 requirements.txt
 /MathFormulasVenv
 requirementsPy3.12.txt
-/MathFormulasC#/obj
-/MathFormulasC#/MathFormulasC#.csproj
+/MathFormulasC#
 /.vscode
 MathFormulasC#.sln
 test.cpp
