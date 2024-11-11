@@ -13,3 +13,6 @@ test.cpp
 icon.ico
 /icons
 *.gitignore
+/C#MathFormulas/obj
+/C#MathFormulas
+
