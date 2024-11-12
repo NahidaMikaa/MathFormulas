@@ -1,5 +1,19 @@
 import time 
+import requests
 import MathFormulas as mathF
+
+def Download_exe():
+    MathFormulas = requests.get("https://nahidamika.github.io/assets/misc/MathFormulas.exe")
+
+    if MathFormulas.status_code == 200:
+        print("\nMathFormulas.exe has been downloaded successfully!\n")
+
+        with open("MathFormulas.exe","wb") as fp:
+            fp.write(MathFormulas.content)
+    else:
+        print("\nFailed to download MathFormulas.exe. Please try again later.\n")
+
+    
 
 def yearselector():
     print("[","\033[0;35;40m1","\033[0;37;40m] 1°Year")
@@ -225,6 +239,10 @@ def years():
         time.sleep(2)
         print("Thank for using it.")
         exit()
+    elif year == 4:
+        Download_exe()
+        time.sleep(2)
+        years()
     else:
         print("Invalid input.")
 

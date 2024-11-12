@@ -3,6 +3,7 @@ import numpy as np
 import decimal
 from fractions import Fraction
 
+
 def distance_between_two_points():
     x1, y1 = input("\nEnter the first coordinate \033[0;35;40m(x, y)\033[0;37;40m: ").split()
     x1, y1 = float(x1), float(y1)
