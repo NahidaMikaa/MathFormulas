@@ -395,23 +395,23 @@ def final_Secondyear_Thirdsemester_Fourthpartial_themeselector():
     if thirdsemesterFourthPartialTheme == 1:
         mathF.distance_from_a_point_to_a_line()
         time.sleep(5)
-        final_Secondyear_Thirdsemester_Thirdpartial_themeselector()
+        final_Secondyear_Thirdsemester_Fourthpartial_themeselector()
     elif thirdsemesterFourthPartialTheme == 2:
         mathF.Parabola()
         time.sleep(5)
-        final_Secondyear_Thirdsemester_Thirdpartial_themeselector()
+        final_Secondyear_Thirdsemester_Fourthpartial_themeselector()
     elif thirdsemesterFourthPartialTheme == 3:
         time.sleep(5)
-        final_Secondyear_Thirdsemester_Thirdpartial_themeselector()
+        final_Secondyear_Thirdsemester_Fourthpartial_themeselector()
     elif thirdsemesterFourthPartialTheme == 4:
         time.sleep(5)
-        final_Secondyear_Thirdsemester_Thirdpartial_themeselector()
+        final_Secondyear_Thirdsemester_Fourthpartial_themeselector()
     elif thirdsemesterFourthPartialTheme == 5:
         time.sleep(5)
-        final_Secondyear_Thirdsemester_Thirdpartial_themeselector()
+        final_Secondyear_Thirdsemester_Fourthpartial_themeselector()
     elif thirdsemesterFourthPartialTheme == 6:
         time.sleep(5)
-        final_Secondyear_Thirdsemester_Thirdpartial_themeselector()
+        final_Secondyear_Thirdsemester_Fourthpartial_themeselector()
     elif thirdsemesterFourthPartialTheme == 0: #Back
         time.sleep(2)
         thirdsemester_partialselector()
