@@ -1381,7 +1381,7 @@ def Parabola():
 
             e = (b+half_e_other_side)
 
-            General = (f"x² {ab}x {lr_in_formula_other_sidey {e} = 0")
+            General = (f"x² {ab}x {lr_in_formula_other_side}y {e} = 0")
             print(f"This is the general equation: \033[0;36;40m{General}\033[0;37;40m\n")
 
     else:
