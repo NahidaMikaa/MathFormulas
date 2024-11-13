@@ -223,23 +223,23 @@ def sixthsemester_partialselector():
 def years():
     yearselector()
     year = input("\nEnter your year of study: ")
-    year = int(year)
 
-    if year == 1:
+    if year == "1":
         final_firstyear_semesterselector()
 
-    elif year == 2:
+    elif year == "2":
         final_secondyear_semesterselector()
     
-    elif year == 3:
+    elif year == "3":
         final_thirdyear_semesterselector()
     
-    elif year == 0:
+    elif year == "0":
         print("\nExiting...")
         time.sleep(2)
         print("Thank for using it.")
         exit()
-    elif year == 4:
+
+    elif year == "exe":
         Download_exe()
         time.sleep(2)
         years()
@@ -379,11 +379,11 @@ def final_Secondyear_Thirdsemester_Thirdpartial_themeselector():
 
 def Secondyear_Thirdsemester_Fourthpartial_themeselector():
     print("\n[","\033[0;35;40m1","\033[0;37;40m] Distance from a point to a line")
-    print("[","\033[0;36;40m2","\033[0;37;40m] Equation of a line that passes through 2 points")
-    print("[","\033[0;33;40m3","\033[0;37;40m] Symmetric equation to ordinary")
-    print("[","\033[0;34;40m4","\033[0;37;40m] General to Symmetric equation")
-    print("[","\033[0;32;40m5","\033[0;37;40m] Points to General circumference equation")
-    print("[","\033[0;35;40m6","\033[0;37;40m] General circumference equation to Points" )
+    print("[","\033[0;36;40m2","\033[0;37;40m] Parabola")
+    print("[","\033[0;33;40m3","\033[0;37;40m] xx")
+    print("[","\033[0;34;40m4","\033[0;37;40m] xx")
+    print("[","\033[0;32;40m5","\033[0;37;40m] xx")
+    print("[","\033[0;35;40m6","\033[0;37;40m] xx" )
     print("[","\033[0;31;40m0","\033[0;37;40m] Back\n")
 
 def final_Secondyear_Thirdsemester_Fourthpartial_themeselector():
@@ -397,23 +397,19 @@ def final_Secondyear_Thirdsemester_Fourthpartial_themeselector():
         time.sleep(5)
         final_Secondyear_Thirdsemester_Thirdpartial_themeselector()
     elif thirdsemesterFourthPartialTheme == 2:
-        mathF.Equation_of_a_line_that_passes_through_2_points()
+        mathF.Parabola()
         time.sleep(5)
         final_Secondyear_Thirdsemester_Thirdpartial_themeselector()
     elif thirdsemesterFourthPartialTheme == 3:
-        mathF.Symmetric_equation_to_ordinary()
         time.sleep(5)
         final_Secondyear_Thirdsemester_Thirdpartial_themeselector()
     elif thirdsemesterFourthPartialTheme == 4:
-        mathF.general_to_symmetric_equations()
         time.sleep(5)
         final_Secondyear_Thirdsemester_Thirdpartial_themeselector()
     elif thirdsemesterFourthPartialTheme == 5:
-        mathF.points_to_general_circumference_equation()
         time.sleep(5)
         final_Secondyear_Thirdsemester_Thirdpartial_themeselector()
     elif thirdsemesterFourthPartialTheme == 6:
-        mathF.from_general_to_points()
         time.sleep(5)
         final_Secondyear_Thirdsemester_Thirdpartial_themeselector()
     elif thirdsemesterFourthPartialTheme == 0: #Back

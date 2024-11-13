@@ -2,6 +2,7 @@ import math
 import numpy as np
 import decimal
 from fractions import Fraction
+#import matplotlib.pyplot as plt
 
 
 def distance_between_two_points():
@@ -999,6 +1000,392 @@ def distance_from_a_point_to_a_line():
 
     print(f"\nThe distance from the point to the line is: \033[0;32;40m{d}\033[0;37;40m\n and in fraction \033[0;35;40m{Fraction(d).limit_denominator()}\033[0;37;40m")
 
+def Parabola():
+    x1, y1 = input("\nEnter the first coordinate \033[0;35;40m(x, y)\033[0;37;40m: ").split()
+    h, k = int(x1), int(y1)
+
+    p = input("\nEnter the Focal length/Parameter \033[0;31;40m p \033[0;37;40m (if you have lr  p = lr/4): ")
+    p = float(p)
+
+    opening = input("\nWhere does the parabola opens to? (Right/Left/Up/Down)")
+
+    lr = (p*4)
+
+    if opening.lower() == "right" or opening.lower() == "r":
+        #(y-k)² = 4p(x-h)
+        h_in_formula = (h*-1)
+        k_in_formula = (k*-1)
+        
+        if h_in_formula >= 0 and k_in_formula >= 0:
+            ordinary = (f"(y{k_in_formula})² = {lr}(x{h_in_formula})")
+            print(f"This is the ordinary formula: \033[0;32;40m{ordinary}\033[0;37;40m")
+
+            # (y-k)²
+            ab = (2*k_in_formula)
+            b = int(math.pow(k,2))
+
+            # 4p(x-h)
+            half_e = (lr*h_in_formula)
+
+            Generel_scrambled = (f"y² {ab}y {b} = {lr}x {half_e}")
+            print(f"This is a general equation that isn't equal to 0: \033[0;34;40m{Generel_scrambled}\033[0;37;40m")
+
+            lr_other_side = (lr*-1)
+            half_e_other_side = (half_e*-1)
+
+            e = (b+half_e_other_side)
+
+            General = (f"y² {lr_other_side}x {ab}y {e} = 0")
+            print(f"This is the general equation: \033[0;36;40m{General}\033[0;37;40m\n")
+
+        elif h_in_formula >= 0 and k_in_formula <= 0:
+            ordinary = (f"(y{k_in_formula})² = {lr}(x + {h_in_formula})")
+            print(f"This is the ordinary formula: \033[0;32;40m{ordinary}\033[0;37;40m")
+
+            # (y-k)²
+            ab = (2*k_in_formula)
+            b = int(math.pow(k,2))
+
+            # 4p(x-h)
+            half_e = (lr*h_in_formula)
+
+            Generel_scrambled = (f"y² {ab}y {b} = {lr}x {half_e}")
+            print(f"This is a general equation that isn't equal to 0: \033[0;34;40m{Generel_scrambled}\033[0;37;40m")
+
+            lr_other_side = (lr*-1)
+            half_e_other_side = (half_e*-1)
+
+            e = (b+half_e_other_side)
+
+            General = (f"y² {lr_other_side}x {ab}y {e} = 0")
+            print(f"This is the general equation: \033[0;36;40m{General}\033[0;37;40m\n")
+
+        elif h_in_formula <= 0 and k_in_formula >= 0:
+            ordinary = (f"(y + {k_in_formula})² = {lr}(x{h_in_formula})")
+            print(f"This is the ordinary formula: \033[0;32;40m{ordinary}\033[0;37;40m")
+
+            # (y-k)²
+            ab = (2*k_in_formula)
+            b = int(math.pow(k,2))
+
+            # 4p(x-h)
+            half_e = (lr*h_in_formula)
+
+            Generel_scrambled = (f"y² {ab}y {b} = {lr}x {half_e}")
+            print(f"This is a general equation that isn't equal to 0: \033[0;34;40m{Generel_scrambled}\033[0;37;40m")
+
+            lr_other_side = (lr*-1)
+            half_e_other_side = (half_e*-1)
+
+            e = (b+half_e_other_side)
+
+            General = (f"y² {lr_other_side}x {ab}y {e} = 0")
+            print(f"This is the general equation: \033[0;36;40m{General}\033[0;37;40m\n")
+
+        elif h_in_formula <= 0 and k_in_formula <= 0:
+            ordinary = (f"(y + {k_in_formula})² = {lr}(x + {h_in_formula})")
+            print(f"This is the ordinary formula: \033[0;32;40m{ordinary}\033[0;37;40m")
+
+            # (y-k)²
+            ab = (2*k_in_formula)
+            b = int(math.pow(k,2))
+
+            # 4p(x-h)
+            half_e = (lr*h_in_formula)
+
+            Generel_scrambled = (f"y² {ab}y {b} = {lr}x {half_e}")
+            print(f"This is a general equation that isn't equal to 0: \033[0;34;40m{Generel_scrambled}\033[0;37;40m")
+
+            lr_other_side = (lr*-1)
+            half_e_other_side = (half_e*-1)
+
+            e = (b+half_e_other_side)
+
+            General = (f"y² {lr_other_side}x {ab}y {e} = 0")
+            print(f"This is the general equation: \033[0;36;40m{General}\033[0;37;40m\n")
+
+    elif opening.lower() == "up" or opening.lower() == "u":
+        #(x-h)² = 4p(y-k)
+        h_in_formula = (h*-1)
+        k_in_formula = (k*-1)
+
+        if h_in_formula >= 0 and k_in_formula >= 0:
+            ordinary = (f"(x{h_in_formula})² = {lr}(y{k_in_formula})")
+            print(f"This is the ordinary formula: \033[0;32;40m{ordinary}\033[0;37;40m")
+
+            # (x-h)²
+            ab = (2*h_in_formula)
+            b = int(math.pow(h,2))
+
+            # -4p(y-k)
+            half_e = (lr*k_in_formula)
+
+            Generel_scrambled = (f"x² {ab}y {b} = {lr}x {half_e}")
+            print(f"This is a general equation that isn't equal to 0: \033[0;34;40m{Generel_scrambled}\033[0;37;40m")
+
+            lr_other_side = (lr*-1)
+            half_e_other_side = (half_e*-1)
+
+            e = (b+half_e_other_side)
+
+            General = (f"x² {lr_other_side}x {ab}y {e} = 0")
+            print(f"This is the general equation: \033[0;36;40m{General}\033[0;37;40m\n")
+
+        elif h_in_formula >= 0 and k_in_formula <= 0:
+            ordinary = (f"(x{h_in_formula})² = {lr}(y + {k_in_formula})")
+            print(f"This is the ordinary formula: \033[0;32;40m{ordinary}\033[0;37;40m")
+
+            # (x-h)²
+            ab = (2*h_in_formula)
+            b = int(math.pow(h,2))
+
+            # -4p(y-k)
+            half_e = (lr*k_in_formula)
+
+            Generel_scrambled = (f"x² {ab}y {b} = {lr}x {half_e}")
+            print(f"This is a general equation that isn't equal to 0: \033[0;34;40m{Generel_scrambled}\033[0;37;40m")
+
+            lr_other_side = (lr*-1)
+            half_e_other_side = (half_e*-1)
+
+            e = (b+half_e_other_side)
+
+            General = (f"x² {lr_other_side}x {ab}y {e} = 0")
+            print(f"This is the general equation: \033[0;36;40m{General}\033[0;37;40m\n")
+
+        elif h_in_formula <= 0 and k_in_formula >= 0:
+            ordinary = (f"(x + {h_in_formula})² = {lr}(y{h_in_formula})")
+            print(f"This is the ordinary formula: \033[0;32;40m{ordinary}\033[0;37;40m")
+
+            # (x-h)²
+            ab = (2*h_in_formula)
+            b = int(math.pow(h,2))
+
+            # -4p(y-k)
+            half_e = (lr*k_in_formula)
+
+            Generel_scrambled = (f"x² {ab}y {b} = {lr}x {half_e}")
+            print(f"This is a general equation that isn't equal to 0: \033[0;34;40m{Generel_scrambled}\033[0;37;40m")
+
+            lr_other_side = (lr*-1)
+            half_e_other_side = (half_e*-1)
+
+            e = (b+half_e_other_side)
+
+            General = (f"x² {lr_other_side}x {ab}y {e} = 0")
+            print(f"This is the general equation: \033[0;36;40m{General}\033[0;37;40m\n")
+
+        elif h_in_formula <= 0 and k_in_formula <= 0:
+            ordinary = (f"(x + {h_in_formula})² = {lr}(y + {k_in_formula})")
+            print(f"This is the ordinary formula: \033[0;32;40m{ordinary}\033[0;37;40m")
+            # (x-h)²
+            ab = (2*h_in_formula)
+            b = int(math.pow(h,2))
+
+            # -4p(y-k)
+            half_e = (lr*k_in_formula)
+
+            Generel_scrambled = (f"x² {ab}y {b} = {lr}x {half_e}")
+            print(f"This is a general equation that isn't equal to 0: \033[0;34;40m{Generel_scrambled}\033[0;37;40m")
+
+            lr_other_side = (lr*-1)
+            half_e_other_side = (half_e*-1)
+
+            e = (b+half_e_other_side)
+
+            General = (f"x² {lr_other_side}x {ab}y {e} = 0")
+            print(f"This is the general equation: \033[0;36;40m{General}\033[0;37;40m\n")
+
+    elif opening.lower() == "left" or opening.lower() == "l":
+        #(y-k)² = -4p(x-h)
+        h_in_formula = (h*-1)
+        k_in_formula = (k*-1)
+        lr_in_formula = (lr*-1)
+
+        if h_in_formula >= 0 and k_in_formula >= 0:
+            ordinary = (f"(y{k_in_formula})² = {lr}(x{h_in_formula})")
+            print(f"This is the ordinary formula: \033[0;32;40m{ordinary}\033[0;37;40m")
+
+            # (y-k)²
+            ab = (2*k_in_formula)
+            b = int(math.pow(k,2))
+
+            # -4p(x-h)
+            half_e = (lr_in_formula*h_in_formula)
+
+            Generel_scrambled = (f"y² {ab}y {b} = {lr_in_formula}x {half_e}")
+            print(f"This is a general equation that isn't equal to 0: \033[0;34;40m{Generel_scrambled}\033[0;37;40m")
+
+            lr_in_formula_other_side = (lr_in_formula*-1)
+            half_e_other_side = (half_e*-1)
+
+            e = (b+half_e_other_side)
+
+            General = (f"y² {lr_in_formula_other_side}x {ab}y {e} = 0")
+            print(f"This is the general equation: \033[0;36;40m{General}\033[0;37;40m\n")
+
+        elif h_in_formula >= 0 and k_in_formula <= 0:
+            ordinary = (f"(y{k_in_formula})² = {lr}(x + {h_in_formula})")
+            print(f"This is the ordinary formula: \033[0;32;40m{ordinary}\033[0;37;40m")
+
+            # (y-k)²
+            ab = (2*k_in_formula)
+            b = int(math.pow(k,2))
+
+            # -4p(x-h)
+            half_e = (lr_in_formula*h_in_formula)
+
+            Generel_scrambled = (f"y² {ab}y {b} = {lr_in_formula}x {half_e}")
+            print(f"This is a general equation that isn't equal to 0: \033[0;34;40m{Generel_scrambled}\033[0;37;40m")
+
+            lr_in_formula_other_side = (lr_in_formula*-1)
+            half_e_other_side = (half_e*-1)
+
+            e = (b+half_e_other_side)
+
+            General = (f"y² {lr_in_formula_other_side}x {ab}y {e} = 0")
+            print(f"This is the general equation: \033[0;36;40m{General}\033[0;37;40m\n")
+
+        elif h_in_formula <= 0 and k_in_formula >= 0:
+            ordinary = (f"(y + {k_in_formula})² = {lr}(x{h_in_formula})")
+            print(f"This is the ordinary formula: \033[0;32;40m{ordinary}\033[0;37;40m")
+
+            # (y-k)²
+            ab = (2*k_in_formula)
+            b = int(math.pow(k,2))
+
+            # -4p(x-h)
+            half_e = (lr_in_formula*h_in_formula)
+
+            Generel_scrambled = (f"y² {ab}y {b} = {lr_in_formula}x {half_e}")
+            print(f"This is a general equation that isn't equal to 0: \033[0;34;40m{Generel_scrambled}\033[0;37;40m")
+
+            lr_in_formula_other_side = (lr_in_formula*-1)
+            half_e_other_side = (half_e*-1)
+
+            e = (b+half_e_other_side)
+
+            General = (f"y² {lr_in_formula_other_side}x {ab}y {e} = 0")
+            print(f"This is the general equation: \033[0;36;40m{General}\033[0;37;40m\n")
+
+        elif h_in_formula <= 0 and k_in_formula <= 0:
+            ordinary = (f"(y + {k_in_formula})² = {lr}(x + {h_in_formula})")
+            print(f"This is the ordinary formula: \033[0;32;40m{ordinary}\033[0;37;40m")
+
+            # (y-k)²
+            ab = (2*k_in_formula)
+            b = int(math.pow(k,2))
+
+            # -4p(x-h)
+            half_e = (lr_in_formula*h_in_formula)
+
+            Generel_scrambled = (f"y² {ab}y {b} = {lr_in_formula}x {half_e}")
+            print(f"This is a general equation that isn't equal to 0: \033[0;34;40m{Generel_scrambled}\033[0;37;40m")
+
+            lr_in_formula_other_side = (lr_in_formula*-1)
+            half_e_other_side = (half_e*-1)
+
+            e = (b+half_e_other_side)
+
+            General = (f"y² {lr_in_formula_other_side}x {ab}y {e} = 0")
+            print(f"This is the general equation: \033[0;36;40m{General}\033[0;37;40m\n")
+
+    elif opening.lower() == "down" or opening.lower() == "d":
+        #(x-h)² = -4p(y-k)
+        h_in_formula = (h*-1)
+        k_in_formula = (k*-1)
+        lr_in_formula = (lr*-1)
+
+        if h_in_formula >= 0 and k_in_formula >= 0:
+            ordinary = (f"(x{h_in_formula})² = {lr}(y{k_in_formula})")
+            print(f"This is the ordinary formula: \033[0;32;40m{ordinary}\033[0;37;40m")
+
+            # (x-h)²
+            ab = (2*h_in_formula)
+            b = int(math.pow(h,2))
+
+            # -4p(y-k)
+            half_e = (lr_in_formula*k_in_formula)
+
+            Generel_scrambled = (f"x² {ab}y {b} = {lr_in_formula}x {half_e}")
+            print(f"This is a general equation that isn't equal to 0: \033[0;34;40m{Generel_scrambled}\033[0;37;40m")
+
+            lr_in_formula_other_side = (lr_in_formula*-1)
+            half_e_other_side = (half_e*-1)
+
+            e = (b+half_e_other_side)
+
+            General = (f"x² {lr_in_formula_other_side}x {ab}y {e} = 0")
+            print(f"This is the general equation: \033[0;36;40m{General}\033[0;37;40m\n")
+
+        elif h_in_formula >= 0 and k_in_formula <= 0:
+            ordinary = (f"(x{h_in_formula})² = {lr}(y + {k_in_formula})")
+            print(f"This is the ordinary formula: \033[0;32;40m{ordinary}\033[0;37;40m")
+
+            # (x-h)²
+            ab = (2*h_in_formula)
+            b = int(math.pow(h,2))
+
+            # -4p(y-k)
+            half_e = (lr_in_formula*k_in_formula)
+
+            Generel_scrambled = (f"x² {ab}y {b} = {lr_in_formula}x {half_e}")
+            print(f"This is a general equation that isn't equal to 0: \033[0;34;40m{Generel_scrambled}\033[0;37;40m")
+
+            lr_in_formula_other_side = (lr_in_formula*-1)
+            half_e_other_side = (half_e*-1)
+
+            e = (b+half_e_other_side)
+
+            General = (f"x² {lr_in_formula_other_side}x {ab}y {e} = 0")
+            print(f"This is the general equation: \033[0;36;40m{General}\033[0;37;40m\n")
+
+        elif h_in_formula <= 0 and k_in_formula >= 0:
+            ordinary = (f"(x + {h_in_formula})² = {lr}(y{h_in_formula})")
+            print(f"This is the ordinary formula: \033[0;32;40m{ordinary}\033[0;37;40m")
+
+            # (x-h)²
+            ab = (2*h_in_formula)
+            b = int(math.pow(h,2))
+
+            # -4p(y-k)
+            half_e = (lr_in_formula*k_in_formula)
+
+            Generel_scrambled = (f"x² {ab}y {b} = {lr_in_formula}x {half_e}")
+            print(f"This is a general equation that isn't equal to 0: \033[0;34;40m{Generel_scrambled}\033[0;37;40m")
+
+            lr_in_formula_other_side = (lr_in_formula*-1)
+            half_e_other_side = (half_e*-1)
+
+            e = (b+half_e_other_side)
+
+            General = (f"x² {lr_in_formula_other_side}x {ab}y {e} = 0")
+            print(f"This is the general equation: \033[0;36;40m{General}\033[0;37;40m\n")
+
+        elif h_in_formula <= 0 and k_in_formula <= 0:
+            ordinary = (f"(x + {h_in_formula})² = {lr}(y + {k_in_formula})")
+            print(f"This is the ordinary formula: \033[0;32;40m{ordinary}\033[0;37;40m")
+
+            # (x-h)²
+            ab = (2*h_in_formula)
+            b = int(math.pow(h,2))
+
+            # -4p(y-k)
+            half_e = (lr_in_formula*k_in_formula)
+
+            Generel_scrambled = (f"x² {ab}y {b} = {lr_in_formula}x {half_e}")
+            print(f"This is a general equation that isn't equal to 0: \033[0;34;40m{Generel_scrambled}\033[0;37;40m")
+
+            lr_in_formula_other_side = (lr_in_formula*-1)
+            half_e_other_side = (half_e*-1)
+
+            e = (b+half_e_other_side)
+
+            General = (f"x² {lr_in_formula_other_side}x {ab}y {e} = 0")
+            print(f"This is the general equation: \033[0;36;40m{General}\033[0;37;40m\n")
+
+    else:
+        print("Invalid Input!")
 
 if __name__ == "__main__":
-    distance_from_a_point_to_a_line()
+    Parabola()
