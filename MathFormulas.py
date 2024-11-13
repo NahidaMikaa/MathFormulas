@@ -1307,7 +1307,7 @@ def Parabola():
             # -4p(y-k)
             half_e = (lr_in_formula*k_in_formula)
 
-            Generel_scrambled = (f"x² {ab}y {b} = {lr_in_formula}x {half_e}")
+            Generel_scrambled = (f"x² {ab}x {b} = {lr_in_formula}y {half_e}")
             print(f"This is a general equation that isn't equal to 0: \033[0;34;40m{Generel_scrambled}\033[0;37;40m")
 
             lr_in_formula_other_side = (lr_in_formula*-1)
@@ -1315,7 +1315,7 @@ def Parabola():
 
             e = (b+half_e_other_side)
 
-            General = (f"x² {lr_in_formula_other_side}x {ab}y {e} = 0")
+            General = (f"x² {ab}x {lr_in_formula_other_side}y  {e} = 0")
             print(f"This is the general equation: \033[0;36;40m{General}\033[0;37;40m\n")
 
         elif h_in_formula >= 0 and k_in_formula <= 0:
@@ -1329,7 +1329,7 @@ def Parabola():
             # -4p(y-k)
             half_e = (lr_in_formula*k_in_formula)
 
-            Generel_scrambled = (f"x² {ab}y {b} = {lr_in_formula}x {half_e}")
+            Generel_scrambled = (f"x² {ab}x {b} = {lr_in_formula}y {half_e}")
             print(f"This is a general equation that isn't equal to 0: \033[0;34;40m{Generel_scrambled}\033[0;37;40m")
 
             lr_in_formula_other_side = (lr_in_formula*-1)
@@ -1337,7 +1337,7 @@ def Parabola():
 
             e = (b+half_e_other_side)
 
-            General = (f"x² {lr_in_formula_other_side}x {ab}y {e} = 0")
+            General = (f"x² {ab}x {lr_in_formula_other_side}y {e} = 0")
             print(f"This is the general equation: \033[0;36;40m{General}\033[0;37;40m\n")
 
         elif h_in_formula <= 0 and k_in_formula >= 0:
@@ -1351,7 +1351,7 @@ def Parabola():
             # -4p(y-k)
             half_e = (lr_in_formula*k_in_formula)
 
-            Generel_scrambled = (f"x² {ab}y {b} = {lr_in_formula}x {half_e}")
+            Generel_scrambled = (f"x² {ab}x {b} = {lr_in_formula}y {half_e}")
             print(f"This is a general equation that isn't equal to 0: \033[0;34;40m{Generel_scrambled}\033[0;37;40m")
 
             lr_in_formula_other_side = (lr_in_formula*-1)
@@ -1359,7 +1359,7 @@ def Parabola():
 
             e = (b+half_e_other_side)
 
-            General = (f"x² {lr_in_formula_other_side}x {ab}y {e} = 0")
+            General = (f"x² {ab}x {lr_in_formula_other_side}y {e} = 0")
             print(f"This is the general equation: \033[0;36;40m{General}\033[0;37;40m\n")
 
         elif h_in_formula <= 0 and k_in_formula <= 0:
@@ -1373,7 +1373,7 @@ def Parabola():
             # -4p(y-k)
             half_e = (lr_in_formula*k_in_formula)
 
-            Generel_scrambled = (f"x² {ab}y {b} = {lr_in_formula}x {half_e}")
+            Generel_scrambled = (f"x² {ab}x {b} = {lr_in_formula}y {half_e}")
             print(f"This is a general equation that isn't equal to 0: \033[0;34;40m{Generel_scrambled}\033[0;37;40m")
 
             lr_in_formula_other_side = (lr_in_formula*-1)
@@ -1381,7 +1381,7 @@ def Parabola():
 
             e = (b+half_e_other_side)
 
-            General = (f"x² {lr_in_formula_other_side}x {ab}y {e} = 0")
+            General = (f"x² {ab}x {lr_in_formula_other_sidey {e} = 0")
             print(f"This is the general equation: \033[0;36;40m{General}\033[0;37;40m\n")
 
     else:
