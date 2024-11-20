@@ -380,7 +380,7 @@ def final_Secondyear_Thirdsemester_Thirdpartial_themeselector():
 def Secondyear_Thirdsemester_Fourthpartial_themeselector():
     print("\n[","\033[0;35;40m1","\033[0;37;40m] Distance from a point to a line")
     print("[","\033[0;36;40m2","\033[0;37;40m] Parabola")
-    print("[","\033[0;33;40m3","\033[0;37;40m] xx")
+    print("[","\033[0;33;40m3","\033[0;37;40m] Ellipse to General Equation")
     print("[","\033[0;34;40m4","\033[0;37;40m] xx")
     print("[","\033[0;32;40m5","\033[0;37;40m] xx")
     print("[","\033[0;35;40m6","\033[0;37;40m] xx" )
@@ -401,6 +401,7 @@ def final_Secondyear_Thirdsemester_Fourthpartial_themeselector():
         time.sleep(5)
         final_Secondyear_Thirdsemester_Fourthpartial_themeselector()
     elif thirdsemesterFourthPartialTheme == 3:
+        mathF.ellipse_to_general_formula()
         time.sleep(5)
         final_Secondyear_Thirdsemester_Fourthpartial_themeselector()
     elif thirdsemesterFourthPartialTheme == 4:

@@ -1387,5 +1387,66 @@ def Parabola():
     else:
         print("Invalid Input!")
 
+class VerticalFraction: 
+    def __init__(self, numerator, denominator, equal): 
+        self.numerator = numerator 
+        self.denominator = denominator 
+        self.equal = equal
+        
+    def __str__(self): 
+
+        # Determine the width of the fraction 
+        width = max(len(str(self.numerator)), len(str(self.denominator))) 
+
+        # Create the fraction as a single string 
+        fraction_str = ( f"{str(self.numerator).center(width)}\n"
+                        f"{'-' * width} = {self.equal}\n"
+                        f"{str(self.denominator).center(width)}" )
+        
+        return fraction_str 
+    def display(self): 
+        print(f"\n{self.__str__()}")
+
+def ellipse_to_general_formula():
+    #Inputs
+    formula = str(input("\nEnter the ellipse formula: "))
+    #x²/a² and y²/b² = 1
+    formula_1, formula_2= formula.split("+")
+    #x² and a²
+    x_squared_lit, a = formula_1.split("/")
+    #y²/b² and 1
+    formula_5, one = formula_2.split("=")
+    #y² and b²
+    y_squared_lit, b = formula_5.split("/")
+
+    
+
+    numerator_1 = (f"{b.strip()}{x_squared_lit.strip()}")
+    numerator_2 = (f"{a.strip()}{y_squared_lit.strip()}")
+
+    numerator = (f"{numerator_1} + {numerator_2}")
+
+    denominator = (int(a)*int(b))
+
+    # IDK it could be useful and it look good
+    VerticalFraction(numerator, denominator, one).display()
+
+    general_dont_equal_zero = (f"{numerator} = {1*denominator}")
+
+    print(f"\nThis is a general equation that isn't equal to 0: \033[0;34;40m{general_dont_equal_zero}\033[0;37;40m")
+
+    general = (f"{numerator} - {denominator} = 0")
+
+    print(f"This is the general equation: \033[0;36;40m{general}\033[0;37;40m\n")
+
+    if a > b:
+        # x²/a² + y²/b² = 1
+        print("This ellipse is \033[0;32;40mHorizontal\033[0;37;40m")
+        print("This direction is in \033[0;35;40mx\033[0;37;40m\n")
+    elif a < b:
+        # x²/b² + y²/a² = 1
+        print("This ellipse is \033[0;35;40mVertical\033[0;37;40m")
+        print("This direction is in \033[0;32;40my\033[0;37;40m\n")
+
 if __name__ == "__main__":
-    Parabola()
+    ellipse_to_general_formula()
