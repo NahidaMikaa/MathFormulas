@@ -1519,5 +1519,15 @@ def eliipse_with_custon_points():
     b = math.sqrt(pre_b)
     print(b)
 
+    #Formula
+    numerator_1 = (f"x{-1*(h)}")
+    denominator_1 = (math.pow(a,2))
+    numerator_2 = (f"y{-1*(k)}")
+    denominator_2 = (math.pow(b,2))
+
+    Ordinal = (f"{VerticalFraction(numerator_1, denominator_1)}+{VerticalFraction(numerator_2, denominator_2)}") #Todo
+
+    print(f"\nThe equation of the ellipse is: \033[0;33;40m{Ordinal}\033[0;37;40m")
+
 if __name__ == "__main__":
     eliipse_with_custon_points()
