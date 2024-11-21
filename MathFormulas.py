@@ -5,7 +5,7 @@ from fractions import Fraction
 #import matplotlib.pyplot as plt
 
 
-def distance_between_two_points():
+def distance_between_two_points() -> float :  
     x1, y1 = input("\nEnter the first coordinate \033[0;35;40m(x, y)\033[0;37;40m: ").split()
     x1, y1 = float(x1), float(y1)
 
@@ -15,6 +15,8 @@ def distance_between_two_points():
     distance = math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
 
     print(f"\nThe distance between the two points is: \033[0;32;40m{distance} u \033[0;37;40m")
+
+    return distance
 
 def Area():
     whichtype = input("\nHow many coordinates do you want to enter: ")
@@ -79,7 +81,7 @@ def coordinates_of_ratio():
 
     print(f"\nThe coordinates of the ratio are (\033[0;35;40m{x}\033[0;37;40m, \033[0;31;40m{y}\033[0;37;40m)\033[0;37;40m.")
 
-def midpoint_of_a_line_segment():
+def midpoint_of_a_line_segment() -> int:
     x1, y1 = input("\nEnter the first coordinate \033[0;35;40m(x, y)\033[0;37;40m: ").split()
     x1, y1 = int(x1), int(y1)
 
@@ -90,6 +92,8 @@ def midpoint_of_a_line_segment():
     Ym = (y1 + y2) / 2
 
     print(f"\nThe coordinates of the midpoint is (\033[0;35;40m{Xm}\033[0;37;40m, \033[0;31;40m{Ym}\033[0;37;40m)\033[0;37;40m.")
+    
+    return Xm, Ym
 
 
 def slope():
@@ -1448,5 +1452,72 @@ def ellipse_to_general_formula():
         print("This ellipse is \033[0;35;40mVertical\033[0;37;40m")
         print("This direction is in \033[0;32;40my\033[0;37;40m\n")
 
+class DistanceBetweenPoints():
+    def __init__(self, x1 = int, y1 = int , x2 = int, y2 = int):
+        self.x1 = x1
+        self.y1 = y1
+        self.x2 = x2
+        self.y2 = y2
+    
+    def calculate_distance(self):
+        distance = math.sqrt((self.x2 - self.x1) ** 2 + (self.y2 - self.y1) ** 2)
+        
+        return distance
+    
+    def Print(self):
+        print(f"\nThe distance between the two points is: \033[0;32;40m{self.calculate_distance()} u \033[0;37;40m")
+
+class MidpointOfALine():
+    def __init__(self, x1 = int, y1 = int , x2 = int, y2 = int):
+        self.x1 = x1
+        self.y1 = y1
+        self.x2 = x2
+        self.y2 = y2
+    
+    def calculate_center(self):
+        Xm = (self.x1 + self.x2) / 2
+        Ym = (self.y1 + self.y2) / 2
+        return float(Xm), float(Ym)
+    
+    def Print(self):
+        Xm, Ym = self.calculate_midpoint()
+        print(f"\nThe coordinates of the midpoint is (\033[0;35;40m{Xm}\033[0;37;40m, \033[0;31;40m{Ym}\033[0;37;40m)\033[0;37;40m")
+
+def eliipse_with_custon_points():
+    #Vetex Inputs
+    v_1_1, v_1_2= input("Enter the coordinates of the \033[0;35;40mvertex\033[0;37;40m: ").split(" ")
+    v_1_1, v_1_2 = int(v_1_1), int(v_1_2)
+    
+    v_2_1, v_2_2 = input("Enter the coordinates of the other \033[0;36;40mvertex\033[0;37;40m: ").split(" ")
+    v_2_1, v_2_2 = int(v_2_1), int(v_2_2)
+
+    #Focus Inputs
+    f_1_1, f_1_2 = input("Enter the coordinates of the \033[0;31;40mfirst focus\033[0;37;40m: ").split(" ")
+    f_1_1, f_1_2 = int(f_1_1), int(f_1_2)
+    
+    f_2_1, f_2_2 = input("Enter the coordinates of the \033[0;32;40msecond focus\033[0;37;40m: ").split(" ")
+    f_2_1, f_2_2 = int(f_2_1), int(f_2_2)
+    
+    #Calculate the center
+    center = MidpointOfALine(v_1_1, v_1_2, v_2_1, v_2_2).calculate_center()
+    center = str(center)
+    h, k = center.split(" ")
+    print(h, k)
+    print(k, center)
+    h, k = int(h), int(k)
+
+    print(f"\nThe coordinates of the center of the ellipse are (\033[0;35;40m{h}\033[0;37;40m, \033[0;34;40m{k}\033[0;37;40m)")
+    
+    #Calculate the major and minor axis
+    a = DistanceBetweenPoints(h, k, v_1_1, v_1_2).calculate_distance() 
+    c = DistanceBetweenPoints(h, k, f_1_1, f_1_2).calculate_distance()
+
+    a = float(a)
+    c = float(c)
+
+    pre_b = ((math.pow(a,2))-(math.pow(c,2)))
+    b = math.sqrt(pre_b)
+    print(b)
+
 if __name__ == "__main__":
-    ellipse_to_general_formula()
+    eliipse_with_custon_points()
