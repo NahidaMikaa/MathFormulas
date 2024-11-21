@@ -1506,7 +1506,7 @@ def eliipse_with_custon_points():
     h, k = float(h), float(k)
     h, k = int(h), int(k)
 
-    #print(f"\nThe coordinates of the center of the ellipse are (\033[0;35;40m{h}\033[0;37;40m, \033[0;34;40m{k}\033[0;37;40m)")
+    print(f"\nThe coordinates of the center of the ellipse are (\033[0;35;40m{h}\033[0;37;40m, \033[0;34;40m{k}\033[0;37;40m)")
     
     #Calculate the major and minor axis
     a = DistanceBetweenPoints(h, k, v_1_1, v_1_2).calculate_distance() 
