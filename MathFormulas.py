@@ -1520,9 +1520,9 @@ def eliipse_with_custon_points():
     print(b)
 
     #Formula
-    numerator_1 = (f"x{-1*(h)}")
+    numerator_1 = (f"(x{-1*(h)})")
     denominator_1 = (math.pow(a,2))
-    numerator_2 = (f"y{-1*(k)}")
+    numerator_2 = (f"(y{-1*(k)})")
     denominator_2 = (math.pow(b,2))
 
     Ordinal = (f"{VerticalFraction(numerator_1, denominator_1)}+{VerticalFraction(numerator_2, denominator_2)}") #Todo
