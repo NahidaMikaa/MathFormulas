@@ -1501,10 +1501,12 @@ def eliipse_with_custon_points():
     #Calculate the center
     center = MidpointOfALine(v_1_1, v_1_2, v_2_1, v_2_2).calculate_center()
     center = str(center)
-    h, k = center.split(" ")
+    center = center.replace(")", " ").replace("("," ")
+    h, k = center.split(",")
+    h, k = float(h), float(k)
     h, k = int(h), int(k)
 
-    print(f"\nThe coordinates of the center of the ellipse are (\033[0;35;40m{h}\033[0;37;40m, \033[0;34;40m{k}\033[0;37;40m)")
+    #print(f"\nThe coordinates of the center of the ellipse are (\033[0;35;40m{h}\033[0;37;40m, \033[0;34;40m{k}\033[0;37;40m)")
     
     #Calculate the major and minor axis
     a = DistanceBetweenPoints(h, k, v_1_1, v_1_2).calculate_distance() 
