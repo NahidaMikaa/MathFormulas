@@ -1522,6 +1522,9 @@ class SolveSquaredBinomials():
         elif self.value > 0: #Negative Numbers
             squared_biomial = (f"{self.variable}² + {(self.value*-1)*2}{self.variable} + {math.pow(self.value, 2)}")
             return squared_biomial
+        elif self.value == 0:
+            squared_binomial = (f"{self.variable}²")
+            return squared_binomial
         
     def Get_Var(self):
         self.value = (self.value*-1)
@@ -1535,6 +1538,9 @@ class SolveSquaredBinomials():
             ab_2 = (f"{self.value*2}{self.variable}")
             squared_value = (f"{math.pow(self.value, 2)}")
             return squared_variable, ab_2, squared_value
+        elif self.value == 0:
+            squared_variable = (f"{self.variable}²")
+            return squared_variable
         
 
 def ellipse_with_custon_points():
@@ -1590,30 +1596,38 @@ def ellipse_with_custon_points():
         #Get X variables
         pre_general_1 = SolveSquaredBinomials("x", h).calculate_value()
 
-        Get_vars_x = SolveSquaredBinomials("x", h).Get_Var()
-        Get_vars_x = str(Get_vars_x)
-        Get_vars_x = Get_vars_x.replace(")", " ").replace("("," ")
-        x_squared, ab_2_x, b_binomial_squared_x = Get_vars_x.split(",")
-        ab_2_x = ab_2_x.replace("x", " ").replace("'", " ")
-        b_binomial_squared_x = b_binomial_squared_x.replace("'", " ")
-        x_squared = x_squared.replace("'", " ")
-        print(x_squared, ab_2_x, b_binomial_squared_x)
-        ab_2_x, b_binomial_squared_x = int(ab_2_x), float(b_binomial_squared_x)
-        b_binomial_squared_x = int(b_binomial_squared_x)
+        if h == 0:
+            x_squared= SolveSquaredBinomials("x", h).Get_Var()
+            print(x_squared)
+        elif h != 0:
+            Get_vars_x = SolveSquaredBinomials("x", h).Get_Var()
+            Get_vars_x = str(Get_vars_x)
+            Get_vars_x = Get_vars_x.replace(")", " ").replace("("," ")
+            x_squared, ab_2_x, b_binomial_squared_x = Get_vars_x.split(",")
+            ab_2_x = ab_2_x.replace("x", " ").replace("'", " ")
+            b_binomial_squared_x = b_binomial_squared_x.replace("'", " ")
+            x_squared = x_squared.replace("'", " ")
+            print(x_squared, ab_2_x, b_binomial_squared_x)
+            ab_2_x, b_binomial_squared_x = int(ab_2_x), float(b_binomial_squared_x)
+            b_binomial_squared_x = int(b_binomial_squared_x)
 
         #Get Y variables
         pre_general_2 = SolveSquaredBinomials("y", k).calculate_value()
 
-        Get_vars_y = SolveSquaredBinomials("y", k).Get_Var()
-        Get_vars_y = str(Get_vars_y)
-        Get_vars_y = Get_vars_y.replace(")", " ").replace("("," ")
-        y_squared, ab_2_y, b_binomial_squared_y = Get_vars_y.split(",")
-        ab_2_y = ab_2_y.replace("y", " ").replace("'", " ")
-        b_binomial_squared_y = b_binomial_squared_y.replace("'", " ")
-        y_squared = y_squared.replace("'", " ")
-        print(y_squared, ab_2_y, b_binomial_squared_y)
-        ab_2_y, b_binomial_squared_y = int(ab_2_y), float(b_binomial_squared_y)
-        b_binomial_squared_y = int(b_binomial_squared_y)
+        if k == 0:
+            y_squared= SolveSquaredBinomials("y", k).Get_Var()
+            print(y_squared)
+        elif k != 0:
+            Get_vars_y = SolveSquaredBinomials("y", k).Get_Var()
+            Get_vars_y = str(Get_vars_y)
+            Get_vars_y = Get_vars_y.replace(")", " ").replace("("," ")
+            y_squared, ab_2_y, b_binomial_squared_y = Get_vars_y.split(",")
+            ab_2_y = ab_2_y.replace("y", " ").replace("'", " ")
+            b_binomial_squared_y = b_binomial_squared_y.replace("'", " ")
+            y_squared = y_squared.replace("'", " ")
+            print(y_squared, ab_2_y, b_binomial_squared_y)
+            ab_2_y, b_binomial_squared_y = int(ab_2_y), float(b_binomial_squared_y)
+            b_binomial_squared_y = int(b_binomial_squared_y)
 
         #Formula2
         common_divisor = (a_squared*b_squared)
@@ -1649,30 +1663,38 @@ def ellipse_with_custon_points():
         #Get X variables
         pre_general_1 = SolveSquaredBinomials("x", h).calculate_value()
 
-        Get_vars_x = SolveSquaredBinomials("x", h).Get_Var()
-        Get_vars_x = str(Get_vars_x)
-        Get_vars_x = Get_vars_x.replace(")", " ").replace("("," ")
-        x_squared, ab_2_x, b_binomial_squared_x = Get_vars_x.split(",")
-        ab_2_x = ab_2_x.replace("x", " ").replace("'", " ")
-        b_binomial_squared_x = b_binomial_squared_x.replace("'", " ")
-        x_squared = x_squared.replace("'", " ")
-        #print(x_squared, ab_2_x, b_binomial_squared_x)
-        ab_2_x, b_binomial_squared_x = int(ab_2_x), float(b_binomial_squared_x)
-        b_binomial_squared_x = int(b_binomial_squared_x)
+        if h == 0:
+            x_squared= SolveSquaredBinomials("x", h).Get_Var()
+            print(x_squared)
+        elif h != 0:
+            Get_vars_x = SolveSquaredBinomials("x", h).Get_Var()
+            Get_vars_x = str(Get_vars_x)
+            Get_vars_x = Get_vars_x.replace(")", " ").replace("("," ")
+            x_squared, ab_2_x, b_binomial_squared_x = Get_vars_x.split(",")
+            ab_2_x = ab_2_x.replace("x", " ").replace("'", " ")
+            b_binomial_squared_x = b_binomial_squared_x.replace("'", " ")
+            x_squared = x_squared.replace("'", " ")
+            print(x_squared, ab_2_x, b_binomial_squared_x)
+            ab_2_x, b_binomial_squared_x = int(ab_2_x), float(b_binomial_squared_x)
+            b_binomial_squared_x = int(b_binomial_squared_x)
 
         #Get Y variables
         pre_general_2 = SolveSquaredBinomials("y", k).calculate_value()
 
-        Get_vars_y = SolveSquaredBinomials("y", k).Get_Var()
-        Get_vars_y = str(Get_vars_y)
-        Get_vars_y = Get_vars_y.replace(")", " ").replace("("," ")
-        y_squared, ab_2_y, b_binomial_squared_y = Get_vars_y.split(",")
-        ab_2_y = ab_2_y.replace("y", " ").replace("'", " ")
-        b_binomial_squared_y = b_binomial_squared_y.replace("'", " ")
-        y_squared = y_squared.replace("'", " ")
-        #print(y_squared, ab_2_y, b_binomial_squared_y)
-        ab_2_y, b_binomial_squared_y = int(ab_2_y), float(b_binomial_squared_y)
-        b_binomial_squared_y = int(b_binomial_squared_y)
+        if k == 0:
+            y_squared= SolveSquaredBinomials("y", k).Get_Var()
+            print(y_squared)
+        elif k != 0:
+            Get_vars_y = SolveSquaredBinomials("y", k).Get_Var()
+            Get_vars_y = str(Get_vars_y)
+            Get_vars_y = Get_vars_y.replace(")", " ").replace("("," ")
+            y_squared, ab_2_y, b_binomial_squared_y = Get_vars_y.split(",")
+            ab_2_y = ab_2_y.replace("y", " ").replace("'", " ")
+            b_binomial_squared_y = b_binomial_squared_y.replace("'", " ")
+            y_squared = y_squared.replace("'", " ")
+            print(y_squared, ab_2_y, b_binomial_squared_y)
+            ab_2_y, b_binomial_squared_y = int(ab_2_y), float(b_binomial_squared_y)
+            b_binomial_squared_y = int(b_binomial_squared_y)
 
         #Formula2
         common_divisor = (a_squared*b_squared)
