@@ -1483,6 +1483,53 @@ class MidpointOfALine():
         Xm, Ym = self.calculate_midpoint()
         print(f"\nThe coordinates of the midpoint is (\033[0;35;40m{Xm}\033[0;37;40m, \033[0;31;40m{Ym}\033[0;37;40m)\033[0;37;40m")
 
+class VerticalFractionTwo: 
+    def __init__(self, numerator, denominator, numerator2 ,denominator2, equal, symbol = str ): 
+        self.numerator = numerator 
+        self.denominator = denominator 
+        self.numerator2 = numerator2
+        self.denominator2 = denominator2
+        self.symbol = symbol
+        self.equal = equal
+        
+        
+    def __str__(self): 
+
+        # Determine the width of the fraction 
+        width = max(len(str(self.numerator)), len(str(self.denominator))) 
+        width2 = max(len(str(self.numerator2)), len(str(self.denominator2)))
+
+        # Create the fraction as a single string 
+        fraction_str = ( f"{str(self.numerator).center(width)} {str(self.numerator2).center(width2+5)}\n" 
+                        f"{'-' * width} {self.symbol} {'-' * width2}= {self.equal}\n"
+                        f"{str(self.denominator).center(width)} {str(self.denominator2).center(width2+5)}")
+        
+        return fraction_str 
+    def display(self): 
+        print(f"\n{self.__str__()}")
+
+class SolveSquaredBinomials():
+
+    def __init__(self, variable = str, value = int):
+        self.variable = variable
+        self.value = value
+
+    def calculate_value(self):
+        self.value = (self.value*-1)
+        if self.value < 0:#Positive Numbers
+            squared_biomial = (f"{self.variable}² + {self.value*2}{self.variable} + {math.pow(self.value, 2)}")
+            return squared_biomial
+        elif self.value > 0: #Negative Numbers
+            squared_biomial = (f"{self.variable}² - {(self.value*-1)*2}{self.variable} + {math.pow(self.value, 2)}")
+            return squared_biomial
+        
+    def Get_Var(self):
+        squared_variable = (f"{self.variable}²")
+        ab_2 = (f"{self.value*2}{self.variable}")
+        squared_value = (f"{math.pow(self.value, 2)}")
+        return squared_variable, ab_2, squared_value
+
+
 def eliipse_with_custon_points():
     #Vetex Inputs
     v_1_1, v_1_2= input("Enter the coordinates of the \033[0;35;40mvertex\033[0;37;40m: ").split(" ")
@@ -1492,10 +1539,10 @@ def eliipse_with_custon_points():
     v_2_1, v_2_2 = int(v_2_1), int(v_2_2)
 
     #Focus Inputs
-    f_1_1, f_1_2 = input("Enter the coordinates of the \033[0;31;40mfirst focus\033[0;37;40m: ").split(" ")
+    f_1_1, f_1_2 = input("Enter the coordinates of the \033[0;31;40m focus\033[0;37;40m: ").split(" ")
     f_1_1, f_1_2 = int(f_1_1), int(f_1_2)
     
-    f_2_1, f_2_2 = input("Enter the coordinates of the \033[0;32;40msecond focus\033[0;37;40m: ").split(" ")
+    f_2_1, f_2_2 = input("Enter the coordinates of the other\033[0;32;40m focus\033[0;37;40m: ").split(" ")
     f_2_1, f_2_2 = int(f_2_1), int(f_2_2)
     
     #Calculate the center
@@ -1517,17 +1564,60 @@ def eliipse_with_custon_points():
 
     pre_b = ((math.pow(a,2))-(math.pow(c,2)))
     b = math.sqrt(pre_b)
-    print(b)
+    #print(b)
 
-    #Formula
-    numerator_1 = (f"(x{-1*(h)})")
-    denominator_1 = (math.pow(a,2))
-    numerator_2 = (f"(y{-1*(k)})")
-    denominator_2 = (math.pow(b,2))
+    #Vertical or Horizontal
+    if f_1_1 == f_2_1 and v_1_1 == v_2_1: #Coord x is equal
+        print("\nThis ellipse is \033[0;35;40mVertical\033[0;37;40m\n")
+        #Formula  Vertical
+        numerator_1 = (f"(x{-1*(h)})")
+        a_squared = (math.pow(a,2))
+        a_squared = int(a_squared)
+        numerator_2 = (f"(y{-1*(k)})")
+        b_squared = (math.pow(b,2))
+        b_squared = int(b_squared)
 
-    Ordinal = (f"{VerticalFraction(numerator_1, denominator_1)}+{VerticalFraction(numerator_2, denominator_2)}") #Todo
+        ordinal = VerticalFractionTwo(numerator_1, b_squared, numerator_2, a_squared, 1, "+")
+        print(ordinal)
 
-    print(f"\nThe equation of the ellipse is: \033[0;33;40m{Ordinal}\033[0;37;40m")
+        pre_general_1 = SolveSquaredBinomials("x", h).calculate_value()
+        pre_general_2 = SolveSquaredBinomials("y", k).calculate_value()
+
+        Get_vars_x = SolveSquaredBinomials("x", h).Get_Var()
+        Get_vars_x = str(Get_vars_x)
+        Get_vars_x = Get_vars_x.replace(")", " ").replace("("," ")
+        x_squared, ab_2, b_binomial_squared = Get_vars_x.split(",")
+        ab_2 = ab_2.replace("x", " ").replace("'", " ")
+        b_binomial_squared = b_binomial_squared.replace("'", " ")
+
+        print(x_squared, ab_2, b_binomial_squared)
+        ab_2, b_binomial_squared = int(ab_2), int(b_binomial_squared)
+
+        common_divisor = (a_squared*b_squared)
+
+        pre_general = (f"\n{a_squared}({pre_general_1}) + {b_squared}({pre_general_2}) = {common_divisor} ") 
+        print(pre_general)
+        
+    elif f_1_2 == f_2_2 and v_1_2 == v_2_2: #Coord y is equal
+        print("\n This ellipse is \033[0;35;40mVertical\033[0;37;40m\n")
+        #Formula Horizontal
+        numerator_1 = (f"(x{-1*(h)})")
+        a_squared = (math.pow(a,2))
+        a_squared = int(a_squared)
+        numerator_2 = (f"(y{-1*(k)})")
+        b_squared = (math.pow(b,2))
+        b_squared = int(b_squared)
+
+        ordinal = VerticalFractionTwo(numerator_1, a_squared, numerator_2, b_squared, 1, "+")
+        print(ordinal)
+
+        pre_general_1 = SolveSquaredBinomials("x", h).calculate_value()
+        pre_general_2 = SolveSquaredBinomials("y", k).calculate_value()
+
+        common_divisor = (a_squared*b_squared)
+
+        pre_general = (f"\n{b_squared}({pre_general_1}) + {a_squared}({pre_general_2}) = {common_divisor} ") 
+        print(pre_general)
 
 if __name__ == "__main__":
     eliipse_with_custon_points()
