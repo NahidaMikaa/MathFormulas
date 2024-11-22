@@ -1635,20 +1635,57 @@ def ellipse_with_custon_points():
         pre_general = (f"\n{a_squared}({pre_general_1}) + {b_squared}({pre_general_2}) = {common_divisor} ") 
         print(pre_general)
 
-        common_divisor_other_side = (common_divisor*-1)
-        e = (((a_squared*b_binomial_squared_x)+(b_squared*b_binomial_squared_y))+common_divisor_other_side)
+        
+        if h == 0 and k != 0:
+            common_divisor_other_side = (common_divisor*-1)
+            e = ((b_squared*b_binomial_squared_y)+common_divisor_other_side)
+            print(common_divisor_other_side)
+            print((b_squared*b_binomial_squared_y))
+            print(e)
 
-        ax_squared = (f"{a_squared}{x_squared}")
-        ax_squared = ax_squared.replace(" ", "")
+            ax_squared = (f"{a_squared}{x_squared}")
+            ax_squared = ax_squared.replace(" ", "")
 
-        by_squared = (f"{b_squared}{y_squared}")
-        by_squared = by_squared.replace(" ", "")
+            by_squared = (f"{b_squared}{y_squared}")
+            by_squared = by_squared.replace(" ", "")
 
-        general = (f"{ax_squared} + {by_squared} {ab_2_x*a_squared}x {ab_2_y*b_squared}y {e} = 0")
-        print(f"This is the general equation: \033[0;36;40m{general}\033[0;37;40m\n")
+            general = (f"{ax_squared} + {by_squared} {ab_2_y*b_squared}y  {e} = 0")
+            print(f"\nThis is the general equation: \033[0;36;40m{general}\033[0;37;40m\n")
+            
+        elif h != 0 and k == 0:
+            common_divisor_other_side = (common_divisor*-1)
+            e = ((a_squared*b_binomial_squared_x)+common_divisor_other_side)
+            print(common_divisor_other_side)
+            print(a_squared,b_binomial_squared_x)
+            print((a_squared*b_binomial_squared_x))
+            print(e)
+
+            ax_squared = (f"{a_squared}{x_squared}")
+            ax_squared = ax_squared.replace(" ", "")
+
+            by_squared = (f"{b_squared}{y_squared}")
+            by_squared = by_squared.replace(" ", "")
+
+            
+            general = (f"{ax_squared} + {by_squared} {ab_2_x*a_squared}x  {e} = 0")
+            print(f"\nThis is the general equation: \033[0;36;40m{general}\033[0;37;40m\n")
+
+        elif h!= 0 and k != 0:
+            common_divisor_other_side = (common_divisor*-1)
+            e = (((a_squared*b_binomial_squared_x)+(b_squared*b_binomial_squared_y))+common_divisor_other_side)
+
+            ax_squared = (f"{a_squared}{x_squared}")
+            ax_squared = ax_squared.replace(" ", "")
+
+            by_squared = (f"{b_squared}{y_squared}")
+            by_squared = by_squared.replace(" ", "")
+
+            general = (f"{ax_squared} + {by_squared} {ab_2_x*a_squared}x {ab_2_y*b_squared}y {e} = 0")
+            print(f"\nThis is the general equation: \033[0;36;40m{general}\033[0;37;40m\n")
+
         
     elif f_1_2 == f_2_2 and v_1_2 == v_2_2: #Coord y is equal
-        print("\n This ellipse is \033[0;35;40mVertical\033[0;37;40m\n")
+        print("\n This ellipse is \033[0;35;40mHorizontal\033[0;37;40m\n")
         #Formula Horizontal
         numerator_1 = (f"(x{-1*(h)})")
         a_squared = (math.pow(a,2))
@@ -1702,17 +1739,44 @@ def ellipse_with_custon_points():
         pre_general = (f"\n{b_squared}({pre_general_1}) + {a_squared}({pre_general_2}) = {common_divisor} ") 
         print(pre_general)
 
-        common_divisor_other_side = (common_divisor*-1)
-        e = (((a_squared*b_binomial_squared_x)+(b_squared*b_binomial_squared_y))+common_divisor_other_side)
+        if h == 0 and k != 0:
+            common_divisor_other_side = (common_divisor*-1)
+            e = ((a_squared*b_binomial_squared_y)+common_divisor_other_side)
 
-        ax_squared = (f"{b_squared}{x_squared}")
-        ax_squared = ax_squared.replace(" ", "")
+            ax_squared = (f"{b_squared}{x_squared}")
+            ax_squared = ax_squared.replace(" ", "")
 
-        by_squared = (f"{a_squared}{y_squared}")
-        by_squared = by_squared.replace(" ", "")
+            by_squared = (f"{a_squared}{y_squared}")
+            by_squared = by_squared.replace(" ", "")
 
-        general = (f"{ax_squared} + {by_squared} {ab_2_x*b_squared}x {ab_2_y*a_squared}y {e} = 0")
-        print(f"\nThis is the general equation: \033[0;36;40m{general}\033[0;37;40m\n")
+            general = (f"{ax_squared} + {by_squared} {ab_2_y*a_squared}y  {e} = 0")
+            print(f"\nThis is the general equation: \033[0;36;40m{general}\033[0;37;40m\n")
+            
+
+        elif h != 0 and k == 0:
+            e = ((b_squared*b_binomial_squared_x)+common_divisor_other_side)
+
+            ax_squared = (f"{b_squared}{x_squared}")
+            ax_squared = ax_squared.replace(" ", "")
+
+            by_squared = (f"{a_squared}{y_squared}")
+            by_squared = by_squared.replace(" ", "")
+
+            
+            general = (f"{ax_squared} + {by_squared} {ab_2_x*b_squared}x  {e} = 0")
+            print(f"\nThis is the general equation: \033[0;36;40m{general}\033[0;37;40m\n")
+
+        elif h!= 0 and k != 0:
+            e = (((a_squared*b_binomial_squared_x)+(b_squared*b_binomial_squared_y))+common_divisor_other_side)
+
+            ax_squared = (f"{b_squared}{x_squared}")
+            ax_squared = ax_squared.replace(" ", "")
+
+            by_squared = (f"{a_squared}{y_squared}")
+            by_squared = by_squared.replace(" ", "")
+
+            general = (f"{ax_squared} + {by_squared} {ab_2_x*b_squared}x {ab_2_y*a_squared}y {e} = 0")
+            print(f"\nThis is the general equation: \033[0;36;40m{general}\033[0;37;40m\n")
 
 if __name__ == "__main__":
     ellipse_with_custon_points()
